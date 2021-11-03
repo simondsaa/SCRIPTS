@@ -1,0 +1,1 @@
+psexec @chrome.txt -u area52\1180219788.adm -p "RB@%DETTqg18de" -c -f -h chrome.bat c:

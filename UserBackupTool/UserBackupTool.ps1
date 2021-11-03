@@ -1,0 +1,1 @@
+Robocopy "\\xlwuw-759072\C$\Users\1252862141N\Desktop" "\\XLWUW-759072\G$\Backups\Simonds\759072" /MIR /XA:SH /XD /XJD /R:5 /W:15 /MT:32 /V /NP /LOG:"C:\Temp\Logs\UserBackupTool\UserBackupTool.log"

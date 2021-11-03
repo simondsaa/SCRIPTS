@@ -1,0 +1,1 @@
+﻿Robocopy "\\xlwuw-759072\C$\Temp" "\\XLWUW-759072\G$\Backups\Simonds\759072Temp" /MIR /XA:SH /XD /XJD /R:5 /W:15 /MT:32 /V /NP /LOG:"C:\Temp\Logs\UserTempBackupTool\UserTempBackupTool.log"

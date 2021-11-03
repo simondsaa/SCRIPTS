@@ -1,0 +1,2 @@
+﻿# Send-MailMessage -From "325CS.SCOO.NetAdmin@us.af.mil" -To "timothy.brady.11@us.af.mil" -Priority High -Subject "Test" -BodyAsHtml "Test" -SmtpServer wrightpatterson.oa.us.af.mil
+Send-MailMessage -From "aaron.simonds@us.af.mil" -To "aaron.simonds@us.af.mil" -Priority High -Subject "Test" -BodyAsHtml "Test" -SmtpServer wrightpatterson.oa.us.af.mil

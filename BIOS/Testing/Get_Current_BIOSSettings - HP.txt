@@ -1,0 +1,11 @@
+On local PC:  
+Get-WmiObject -Namespace root/hp/instrumentedBIOS -Class hp_biosEnumeration | select Name, currentvalue, possiblevalues | out-file C:\Temp\HPBIOSSettings.csv
+
+On Remote PC:  
+Get-WmiObject -ComputerName XLWUW-PCNAME -Namespace root/hp/instrumentedBIOS -Class hp_biosEnumeration | select Name, currentvalue, possiblevalues | out-file C:\Temp\HPBIOSSettings.csv
+
+On Multiple Remote PCs: 
+$Path = "C:\Temp\YOURPCs.txt"
+$Computers = gc $Path
+ForEach($Computer in $Computers){
+Get-WmiObject -ComputerName $Computer -Namespace root/hp/instrumentedBIOS -Class hp_biosEnumeration | select Name, currentvalue, possiblevalues | out-file C:\Temp\HPBIOSSettings.csv}

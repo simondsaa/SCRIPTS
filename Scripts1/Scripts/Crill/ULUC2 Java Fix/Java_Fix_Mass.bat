@@ -1,0 +1,1 @@
+psexec.exe @"C:\Users\1394844760A\Desktop\Scripting Test Bed\Scripts\Java Home Fix\ULmachines.txt" -c -f "C:\Users\1394844760A\Desktop\Scripting Test Bed\Scripts\Java Home Fix\Java_Scheduler.bat"

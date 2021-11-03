@@ -1,0 +1,96 @@
+Function GADCI($ComputerName)
+{
+
+$Ping = new-object system.net.networkinformation.ping
+$reply = $ping.send($computername)
+if ($reply.status -eq "Success")
+{
+Write-host "$computername online." -foregroundcolor cyan
+
+$wmicomputername = (gwmi win32_computersystem -computername $computername).name
+
+
+$Currentuser = (Get-WmiObject -ea silentlycontinue -namespace root\CIMv2 -class win32_ComputerSystem -computername $ComputerName).username
+If($currentuser -ne $NULL)
+{
+$SAM = $currentuser.split("\")[1]
+$dom = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain() 
+$root = [ADSI] "LDAP://$($dom.Name)"
+$searcher = New-Object System.DirectoryServices.DirectorySearcher $root
+$searcher.filter = "(&(objectCategory=person)(objectClass=user)(sAMAccountName=$SAM))"
+$user = $searcher.FindOne()
+}
+else
+{
+$currentUser = "No Current interactive session"
+}
+$logonui = get-process "logonui" -computername $computername -ea SilentlyContinue
+if($logonui){$isactive = $FALSE}
+else{$isactive = $TRUE}
+    $SMS_C = Get-WmiObject -ea silentlycontinue -namespace root\ccm -class SMS_Client -computername $ComputerName
+    $CCM_C = Get-WmiObject -ea silentlycontinue -namespace root\ccm -class CCM_Client -computername $ComputerName
+    $AF_R_D = Get-WmiObject -ea silentlycontinue -namespace root\CIMV2 -class AF_Revision_Detail -computername $ComputerName
+    $AF_IR = Get-WmiObject -ea silentlycontinue -namespace root\CIMV2 -class AF_ImageRevision -computername $ComputerName
+    $Win32_OS = Get-WmiObject -ea silentlycontinue -namespace root\CIMV2 -class Win32_OperatingSystem -computername $ComputerName
+	
+#	$OSinstalldate = (gwmi win32_operatingsystem -computername $computerName).installdate
+#	$lastbootuptime = (gwmi win32_operatingsystem -computername $computerName).lastbootuptime
+
+    $rk = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]::LocalMachine, $computername)
+If($win32_os.OSArchitecture -eq "32-bit")
+{
+    $AVDefsDate = $rk.OpenSubKey("SOFTWARE\McAfee\AVEngine").getvalue("AVDatDate")
+    $EpoAgentServer = $rk.OpenSubKey("SOFTWARE\Network Associates\ePolicy Orchestrator\Agent").getvalue("ePOServerList")
+    $AgentVersion = $rk.OpenSubKey("SOFTWARE\Network Associates\ePolicy Orchestrator\Application Plugins\CMNUPD__3000").getvalue("Version")
+    #PFE Portion
+    $PFEver = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_ScriptVer")
+    $PFElastRun = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("LastScriptExecution")
+    $PFEbits = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_BITSStatus")
+    $PFECCM = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_CCMStatus")
+    $PFEDCOM = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_DCOM")
+    $PFEDCOMProtocols = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_DCOMProtocols")
+    $PFEstalelogs = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_StaleLogs")
+    $PFEWMIRead = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIReadRepository")
+    $PFEWMIStatus = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIStatus")
+    $PFEWMIWrite = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIWriteRepository")
+    $PFEWUAStatus = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WUAStatus")
+    $PFEWMIRebuild = $rk.opensubkey("SOFTWARE\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIRebuildAttempts")
+
+}
+else
+{$AVDefsDate = $rk.OpenSubKey("SOFTWARE\Wow6432Node\McAfee\AVEngine").getvalue("AVDatDate")
+    $EpoAgentServer = $rk.OpenSubKey("SOFTWARE\Wow6432Node\Network Associates\ePolicy Orchestrator\Agent").getvalue("ePOServerList")
+    $AgentVersion = $rk.OpenSubKey("SOFTWARE\Wow6432Node\Network Associates\ePolicy Orchestrator\Application Plugins\CMNUPD__3000").getvalue("Version")
+    $PFEver = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_ScriptVer")
+    $PFElastRun = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("LastScriptExecution")
+    $PFEbits = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_BITSStatus")
+    $PFECCM = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_CCMStatus")
+    $PFEDCOM = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_DCOM")
+    $PFEDCOMProtocols = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_DCOMProtocols")
+    $PFEstalelogs = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_StaleLogs")
+    $PFEWMIRead = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIReadRepository")
+    $PFEWMIStatus = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIStatus")
+    $PFEWMIWrite = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIWriteRepository")
+    $PFEWUAStatus = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WUAStatus")
+    $PFEWMIRebuild = $rk.opensubkey("SOFTWARE\Wow6432Node\Microsoft\Microsoft PFE Remediation for Configuration Manager").getvalue("PFE_WMIRebuildAttempts")
+}
+    $installdate = [Management.ManagementDateTimeConverter]::ToDateTime($Win32_OS.installdate)
+    $bootuptime = [Management.ManagementDateTimeConverter]::ToDateTime($Win32_OS.lastbootuptime)
+
+    "`n`n==================================================================="
+    write-host "`nComputerName: " -nonewline; write-host $wmicomputername -foregroundcolor yellow
+    write-host "`nCurrent User data `n`tCurrent User: " -nonewline; write-host $currentuser -foregroundcolor yellow; write-host "`tDisplayname: " -nonewline; write-host $user.properties.displayname -foregroundcolor yellow; write-host "`tTelephone: " -nonewline; write-host $user.properties.telephonenumber -foregroundcolor yellow; write-host "`tIs Terminal in use: " -nonewline; write-host $isactive -foregroundcolor yellow
+    write-host "`nWindows Operating System `n`tCaption: " -nonewline; write-host $Win32_OS.Caption -foregroundcolor yellow; write-host "`tOSArchitecture: " -nonewline; write-host $Win32_OS.OSArchitecture -foregroundcolor yellow; write-host "`tCSDVersion: " -nonewline; write-host $Win32_OS.CSDVersion -foregroundcolor yellow; write-host "`tAF_Revison_Detail Current Build: " -nonewline; write-host $AF_R_D.CurrentBuild -foregroundcolor yellow; write-host "`tAF_ImageRevision: " -nonewline;  write-host $AF_IR.ImageRevision -foregroundcolor yellow; write-host "`tOS Install Date: " -nonewline; write-host $installdate -foregroundcolor yellow; write-host "`tLast Boot Up Time: " -nonewline; write-host $Bootuptime -foregroundcolor yellow
+    write-host "`nMcAfee Info `n`tePO Agent Server: " -nonewline; write-host $EpoAgentServer -foregroundcolor yellow; write-host "`tePO Agent Version: " -nonewline; write-host $AgentVersion -foregroundcolor yellow; write-host "`tAV Definitions Date: " -nonewline; write-host $AVDefsDate -foregroundcolor yellow
+    write-host "`nPFE Remediation Status `n`tPFE Remediation Script Version: " -nonewline; write-host $pfever -foregroundcolor yellow; write-host "`tLast Script Runtime: " -nonewline; write-host $pfelastrun -foregroundcolor yellow; Write-host "`tBITS Status: " -nonewline; write-host $pfebits -foregroundcolor yellow; Write-host "`tCCM Status: " -nonewline; write-host $pfeccm -foregroundcolor yellow; Write-host "`tDCOM Status: " -nonewline; write-host $pfeDCOM -foregroundcolor yellow; Write-host "`tDCOM Protocols: " -nonewline; write-host $pfeDCOMprotocols -foregroundcolor yellow; Write-host "`tStale Logs: " -nonewline; write-host $pfestalelogs -foregroundcolor yellow; Write-host "`tWMI Read Repository: " -nonewline; write-host $pfeWMIread -foregroundcolor yellow
+    Write-host "`tWMI Write Repository: " -nonewline; write-host $pfeWMIWrite -foregroundcolor yellow; Write-host "`tWMI Status: " -nonewline; write-host $pfeWMIStatus -foregroundcolor yellow; Write-host "`tWMI Rebuild Attemps: " -nonewline; write-host $pferebuild -foregroundcolor yellow; Write-host "`tWindows Update Agent Status: " -nonewline; write-host $pfeWUAStatus -foregroundcolor yellow;
+
+    "`n`n===================================================================`n`n"
+
+
+
+
+}
+else{write-host "$computername offline." -foregroundcolor red
+}
+}

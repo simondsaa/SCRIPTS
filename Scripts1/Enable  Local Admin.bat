@@ -1,0 +1,1 @@
+powershell C:\Users\1252862141.adm\Desktop\Scripts\Enable_Local_Admin.ps1 -executionpolicy bypass

@@ -1,0 +1,1 @@
+Robocopy "\\xlwu-fs-01pv\Tyndall_ANG\Shared\_14 CST Help (Do NOT Remove)\19.  Checklists\CST Nuggets\CST Nuggets" "\\xlwu-fs-01pv\Tyndall_ANG\Shared\_14 CST Help (Do NOT Remove)\13.  Temp\Simonds_Temp\Backups\OneNoteBackup" /MIR /XA:SH /XD /XJD /R:5 /W:15 /MT:32 /V /NP /LOG:"C:\Temp\OneNoteBackupTool\Backup.log"

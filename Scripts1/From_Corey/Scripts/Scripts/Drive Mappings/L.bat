@@ -1,0 +1,1 @@
+net use L: "\\tyncesafsedie03\AFCESA$" /PERSISTENT:YES

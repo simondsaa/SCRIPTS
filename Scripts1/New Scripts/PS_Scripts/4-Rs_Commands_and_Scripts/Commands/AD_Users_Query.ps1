@@ -1,0 +1,1 @@
+dsquery user "ou=Tyndall AFB Users, ou=Tyndall AFB, ou=AFCONUSEAST, ou=Bases, dc=AREA52, dc=AFNOAPPS, dc=USAF, dc=MIL" -limit 50000 | dsmod group "cn=!601" "cn=1AF" "cn=!CONR" "cn=!AFNORTH" | dsget user -dn -display -office > C:\Temp\USERS.csv

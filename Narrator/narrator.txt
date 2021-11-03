@@ -1,0 +1,1 @@
+start-process "C:\windows\system32\narrator.exe"

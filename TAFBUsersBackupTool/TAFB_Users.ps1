@@ -1,0 +1,1 @@
+Robocopy "\\xlwu-fs-05pv\Tyndall_public\Stats\Archives\User_Stats\Concurrent" "\\xlwuw-759072\C$\Temp\Users" /MIR /R:5 /W:15 /MT:32 /V /NP /LOG:"C:\Temp\Logs\TAFBUsersBackupTool\TAFBBackup.log"

@@ -1,0 +1,5 @@
+Setting,Value
+UEFI Boot Options,Enable
+Configure Legacy Support and Secure Boot,Legacy Support Disable and Secure Boot Enable
+Boot Mode,UEFI Hybrid (With CSM)
+Secure Boot,Enable

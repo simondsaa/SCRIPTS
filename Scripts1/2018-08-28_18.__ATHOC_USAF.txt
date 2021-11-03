@@ -1,0 +1,105 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Tuesday, August 28, 2018 12:38:52 PM
+2018/08/28 12:38:52 ERROR 161 (0x000000A1) Getting File System Type of Destination \\\C$\TEMP1\
+The specified path is invalid.
+
+   Source : C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\
+     Dest - \\\C$\TEMP1\
+
+    Files : *.*
+	    
+  Options : *.* /TEE /S /DCOPY:DA /COPY:DAT /NP /R:3 /W:1 
+
+------------------------------------------------------------------------------
+
+2018/08/28 12:38:52 ERROR 161 (0x000000A1) Accessing Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+Waiting 1 seconds... Retrying...
+2018/08/28 12:38:53 ERROR 161 (0x000000A1) Accessing Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+Waiting 1 seconds... Retrying...
+2018/08/28 12:38:54 ERROR 161 (0x000000A1) Accessing Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+Waiting 1 seconds... Retrying...
+2018/08/28 12:38:55 ERROR 161 (0x000000A1) Accessing Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+
+ERROR: RETRY LIMIT EXCEEDED.
+
+2018/08/28 12:38:55 ERROR 161 (0x000000A1) Creating Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+Waiting 1 seconds... Retrying...
+2018/08/28 12:38:56 ERROR 161 (0x000000A1) Creating Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+Waiting 1 seconds... Retrying...
+2018/08/28 12:38:57 ERROR 161 (0x000000A1) Creating Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+Waiting 1 seconds... Retrying...
+2018/08/28 12:38:59 ERROR 161 (0x000000A1) Creating Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+
+ERROR: RETRY LIMIT EXCEEDED.
+
+2018/08/28 12:38:59 ERROR 161 (0x000000A1) Creating Destination Directory \\\C$\TEMP1\
+The specified path is invalid.
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Tuesday, August 28, 2018 12:39:04 PM
+   Source : C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\
+     Dest : \\xlwul-442300\C$\TEMP1\
+
+    Files : *.*
+	    
+  Options : *.* /TEE /S /DCOPY:DA /COPY:DAT /NP /R:3 /W:1 
+
+------------------------------------------------------------------------------
+
+	                   8	C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\
+	  *EXTRA File 		  94.4 m	WIN10_RSAT.msu
+	    New File  		  104082	AtHoc USAF fix action SOP.docx
+	    New File  		      87	AtHocCompleteUninstall.bat
+	    New File  		     739	AtHocLegacyUninstall.bat
+	    New File  		   80382	AtHocUSAFDSW6.2.27.268.log
+	    New File  		  39.5 m	AtHocUSAFDSW6.2.27.268.msi
+	    New File  		   2.2 m	AtHocUSAFDSW6.2.27.271.msi
+	    New File  		    8172	InstallAtHoc.vbs
+	    New File  		     245	run.bat
+	  New Dir          1	C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\268 MSI\
+	    New File  		  39.5 m	AtHocAFSOC6.2.18.268.msi
+	  New Dir          5	C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\ATHoc_v271_PNT-JBA-JBAB\
+	    New File  		  186338	AtHocUSAFDSW6.2.27.268.log
+	    New File  		  39.5 m	AtHocUSAFDSW6.2.27.268.msi
+	    New File  		   2.2 m	AtHocUSAFDSW6.2.27.271.msi
+	    New File  		   11266	Install_ATHoc.vbs
+	    New File  		     245	run.bat
+	  New Dir          2	C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\Deepcleaner\
+	    New File  		  245760	DeepCleaner.exe
+	    New File  		     113	readme.txt
+	  New Dir          0	C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\Test\
+	  New Dir          5	C:\Users\1252862141.adm\Desktop\Software - Drivers\18.  ATHOC USAF\Test\AtHocUSAF\
+	    New File  		  588088	AtHocUSAF.exe
+	    New File  		  174392	AtHocUSAFDesk.exe
+	    New File  		  272696	AtHocUSAFGSHtmlCl.dll
+	    New File  		  403768	AtHocUSAFSystemInfo.dll
+	    New File  		  768312	AtHocUSAFTBr.dll
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         6         5         1         0         0         0
+   Files :        21        21         0         0         0         1
+   Bytes :  126.03 m  126.03 m         0         0         0   94.49 m
+   Times :   0:00:15   0:00:15                       0:00:00   0:00:00
+
+
+   Speed :             8648615 Bytes/sec.
+   Speed :             494.877 MegaBytes/min.
+   Ended : Tuesday, August 28, 2018 12:39:20 PM
+

@@ -1,0 +1,1 @@
+dsquery computer "ou=Langley AFB Computers, ou=Langley AFB, ou=AFCONUSEAST, ou=Bases, dc=AREA52, dc=AFNOAPPS, dc=USAF, dc=MIL" -disabled -limit 10000 | dsget computer -dn -desc > C:\Users\Public\Documents\DDMMMYY_Disabled.csv

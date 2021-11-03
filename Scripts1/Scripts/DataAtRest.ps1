@@ -1,0 +1,1 @@
+﻿Get-ChildItem -Path C:\Users\1180219788A\Desktop\deleteOldFiles -recurse | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-365)} | Select-Object DirectoryName, BaseName, Length, CreationTime, LastAccessTime | Export-Csv -Path C:\Users\1180219788A\Desktop\DataAtRest.csv -Encoding ASCII -NoTypeInformation

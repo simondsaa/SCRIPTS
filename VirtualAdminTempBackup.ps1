@@ -1,0 +1,1 @@
+﻿Robocopy "C:\Temp" "\\xlwu-fs-01pv\tyndall_ang\shared\_14 CST Help (Do NOT Remove)\13.  Temp\Simonds_Temp\Backups\VirtualAdminTempBackup" /MIR /XA:SH /XD /XJD /R:5 /W:15 /MT:32 /V /NP /LOG:"C:\Temp\VirtualAdminTempBackupTool\Backup.log"

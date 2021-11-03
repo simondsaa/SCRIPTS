@@ -1,0 +1,5 @@
+Setting,Value
+,
+UEFI Boot Options,Disable
+Configure Legacy Support and Secure Boot,Legacy Support Enable and Secure Boot Disable
+Legacy Boot Options,Enable

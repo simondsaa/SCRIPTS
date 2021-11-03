@@ -1,0 +1,40 @@
+ 
+
+INTRODUCTION:
+
+PS Audio Player was designed as a specialized audio player.  Supported audio file types are:
+
+	Advanced Audio Coding (aac)
+	Audio for Windows (wav)
+	Audio Interchange File Format (aif & aiff)
+	Audio Visual Interleave (avi)
+	Motion Pictures Experts Group Audio Version 3 (mp3)
+	Motion Pictures Experts Group Audio Version 4 (m4a)
+	Musical Instrument Digital Interface (mid & midi)
+	NeXT Computers Sound (snd)
+	Sun Microsystems Audio Units (au)
+	Windows Media Audio (wma)
+ 
+
+KEY FEATURES:
+
+The key feature which distinguishes PS Audio Player from others is how a playlist is interpreted.
+
+The Playlist:
+
+The playlist is a plain text file consisting of a required playlist header as the first line of the file.  The playlist header, (*-<PS Audio Player - Playlist Header>-*), begins and ends with an asterisk.
+
+Successive lines in the playlist may contain a fully qualified filename or a fully qualified directory path.  Blank lines and those with an asterisk as the first character will be treated as comments.  URLs to Local Network resources are supported.  Files of unsupported types will be ignored.  Directories will be searched for all supported files and include these files.  By default, directories are not searched recursively.   However, you may opt to search directories recursively before loading a playlist. The dynamic playlist is sorted by the full path filenames before loading.
+
+Program Options:
+
+The GUI and command line interfaces provide for Looped Playback and Auto Closing the program after completing the playlist.  Auto Close will override Looped Playback.  
+
+The Command Line interface provides the ability to recurse directories when expanding the playlist, preloading a playlist, auto play of the preloaded playlist upon startup, auto close, and specifying alternate font properties.   When launched via the command line any errors in the playlist are logged to the PS_Audio_Player_Errors.txt file.  When preloading a playlist a splash screen is displayed on a background thread.
+
+Many of the programs options including command line options may be stored as user level registry values.
+
+For a full list of parameters run the Powershell Get-Help Cmdlet.
+
+
+

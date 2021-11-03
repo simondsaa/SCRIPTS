@@ -1,0 +1,1 @@
+msg /server:xlwuw-491s35 * /w /v click ok

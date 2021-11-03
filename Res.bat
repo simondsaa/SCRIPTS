@@ -1,0 +1,1 @@
+%homepath%\Windows\System32\setres.exe /x:800 /y:600

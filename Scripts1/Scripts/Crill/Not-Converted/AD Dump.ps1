@@ -1,0 +1,2 @@
+﻿$domain = "OU=Tyndall AFB,OU=AFCONUSEAST,OU=Bases,DC=AREA52,DC=AFNOAPPS,DC=USAF,DC=MIL"
+$Orgs = Get-ADOrganizationalUnit -LDAPFilter '(name=*)' -SearchBase "$domain" -SearchScope Subtree | Format-Table Name

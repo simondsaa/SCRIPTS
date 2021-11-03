@@ -1,0 +1,25 @@
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+(dsget computer CN=TYNAOCWK208Z803,OU="Tyndall AFB Computers",OU="Tyndall AFB",OU=AFCONUSEAST,OU=Bases,DC=AREA52,DC=AFNOAPPS,DC=USAF,DC=MIL -loc) 
+Computer Name: TYNAOCWK208Z803 
+dsget computer CN=TYNAOCWK208Z803,OU="Tyndall AFB Computers",OU="Tyndall AFB",OU=AFCONUSEAST,OU=Bases,DC=AREA52,DC=AFNOAPPS,DC=USAF,DC=MIL -loc 
+Computer Name: TYNAOCWK208Z803 
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.
+Computer Name: TYNAOCWK208Z803 
+dsget computer CN=TYNAOCWK208Z803,OU="Tyndall AFB Computers",OU="Tyndall AFB",OU=AFCONUSEAST,OU=Bases,DC=AREA52,DC=AFNOAPPS,DC=USAF,DC=MIL -loc 
+Computer Name: TYNAOCWK208Z803 
+ECHO is off.

@@ -1,0 +1,1 @@
+start "" "C:\Users\1252862141.adm\Desktop\Scripts\MineSweeper.ps1"

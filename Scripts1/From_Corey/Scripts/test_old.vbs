@@ -1,0 +1,1 @@
+start "firefox.exe https://www.youtube.com/watch?v=y6Sxv-sUYtM" /min

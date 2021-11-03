@@ -1,0 +1,3373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <assembly>
+        <name>LitDev</name>
+    </assembly>
+    <members>
+        <member name="T:LitDev.LDGraph">
+            <summary>
+            Graphing utility.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDGraph.AddGraph(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt einen Grafen bzw. Diagramm.
+            </summary>
+            <param name="xpos">
+            Linke Position des Grafen.
+            </param>
+            <param name="ypos">
+            Rechte Position des Grafen.
+            </param>
+            <param name="width">
+            Breite des Grafen.
+            </param>
+            <param name="height">
+            Höhe des Grafen.
+            </param>
+            <param name="title">
+            Überschrift des Grafen.
+            </param>
+            <param name="labelX">
+            Bezeichnung der X-Achse.
+            </param>
+            <param name="labelY">
+            Bezeichnung der Y-Achse.
+            </param>
+            <returns>
+            Name des Grafen.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.AddSeriesLine(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einem existierenden Grafen einen neuen Datensatz als Linie hinzu.
+            </summary>
+            <param name="graphName">
+            Name des Grafen.
+            </param>
+            <param name="seriesLabel">
+            Bezeichnung des Datensatzes.
+            </param>
+            <param name="data">
+            Ein Array das die X- und Y-Kordinaten enthält.
+            
+            Zum Beispiel, eine Linie vom Punkt 0,1 nach 2,3 hätte
+            data[0] = 1
+            data[2] = 3
+            
+            Allgemein gilt data[x] = y.
+            </param>
+            <param name="colour">
+            Die Farbe des Datensatzes.
+            </param>
+            <returns>
+            nichts
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.AddSeriesHitogram(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einem Grafen einen Datensatz als Säulendiagramm hinzu.
+            </summary>
+            <param name="graphName">
+            Name des Grafen.
+            </param>
+            <param name="seriesLabel">
+            Bezeichnung des Datensatzes.
+            </param>
+            <param name="data">
+            Ein Array das die X- und Y-Kordinaten enthält.
+            
+            Zum Beispiel, eine Linie vom Punkt 0,1 nach 2,3 hätte
+            data[0] = 1
+            data[2] = 3
+            
+            Allgemein gilt data[x] = y.
+            </param>
+            <param name="colour">
+            Die Farbe des Datensatzes.
+            </param>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.AddSeriesPoints(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einem existierenden existierenden Grafen einen Datensatz als Punkte hinzu.
+            </summary>
+            <param name="graphName">
+            Name des Grafen.
+            </param>
+            <param name="seriesLabel">
+            Bezeichnung des Datensatzes.
+            </param>
+            <param name="data">
+            Ein Array das die X- und Y-Kordinaten enthält.
+            
+            Zum Beispiel, eine Linie vom Punkt 0,1 nach 2,3 hätte
+            data[0] = 1
+            data[2] = 3
+            
+            Allgemein gilt data[x] = y.
+            </param>
+            <param name="colour">
+            Die Farbe des Datensatzes.
+            </param>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.DeleteSeries(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Löscht einen vorhandenen Datensatz von einem bestehenden Grafen.
+            </summary>
+            <param name="graphName">
+            Name des Grafen.
+            </param>
+            <param name="seriesLabel">
+            Bezeichnung des zu löschenden Datensatzes.
+            </param>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.StopEvents">
+            <summary>
+            Stoppt alle Ereignisse des Grafen (Klicks der linken Maustaste).
+            </summary>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.RestartEvents">
+            <summary>
+            Startet die Ereignisse des Grafen neu (Klicks der linken Maustaste).
+            </summary>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.ExportCSV(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Exportiert Datensätze als CSV-Datei.
+            </summary>
+            <param name="data">
+            Ein Array welches die X- und Y-Koordinaten enthält.
+            </param>
+            <param name="fileName">
+            Dateiname der zu schreibenden CSV-Datei.
+            </param>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDGraph.Help">
+            <summary>
+            Diese Methode dient nur dazu diese Hilfe anzuzeigen.
+            
+            Daten in einem Grafen können als Linie, Punkte oder Säulen dargestellt werden.
+            
+            Jeder Datensatz ist ein SmallBasic-Array wobei der Index des Arrays den Wert auf der X-Achse repräsentiert und der Inhalt des Array-Elements den Y-Wert darstellt.
+            
+            Beispiel:
+            data[1] = 5
+            data[2] = 8
+            data[3] = 3
+            
+            Erst wird ein neuer Graf mit AddGraph() erstellt, dann werden Daten hinzugefügt per AddSeriesLine(), AddSeriesHistogram() oder AddSeriesPoints().
+            
+            Sobald ein Graf dargestellt ist, können die Achsen mit dem Hand-Cursor festgehalten und bewegt werden. Die Legende kann ebenfalls bewegt werden.
+            
+            Der Graf kann umskaliert werden. Mit linker Maustaste kann ein zu vergrössernder Bereich gewählt oder per Mausrad die gesamte Anzeige vergrössert werden. Ein Doppelklick setzt alle Werte auf Ausgangsstellung zurück.
+            
+            Rechtsklick öffnet ein Menü mit weiteren Funktionen wie exportieren von Bildern oder Daten, Anzeigen der Cursorkoordinaten, Ausblenden der Legende usw.
+            
+            Letzendlich ermöglichen die verschiedenen Parameter dieser Methode weithin Kontrolle über Farben und Verhalten eines Grafen.
+            </summary>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDGraph.BorderColour">
+            <summary>
+            Farbe der Umrandung.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDGraph.InteriorColour">
+            <summary>
+            Farbe des Innenbereiches.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDGraph.TextColour">
+            <summary>
+            Farbe des Textes.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDGraph.AxesColour">
+            <summary>
+            Farbe der Achsen und Einteilungsmarkierungen.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDGraph.GridColour">
+            <summary>
+            Farbe des Rasters.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDGraph.GridLines">
+            <summary>
+            Anzahl der Einteilungsmarkierungen und Rasterlinien (Voreinstellung 10)
+            </summary>
+        </member>
+        <member name="P:LitDev.LDGraph.AxesResolution">
+            <summary>
+            Massgebliche Bezifferung der Achsen (Min und Max, Voreinstellung 2).
+            </summary>
+        </member>
+        <member name="T:LitDev.LDCursors">
+            <summary>
+            Legt einen Mauszeiger für das GraphicsWindow fest.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.None">
+            <summary>
+            kein Mauszeiger.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Arrow">
+            <summary>
+            Pfeil (Voereinstellung).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Cross">
+            <summary>
+            Kreuz.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Hand">
+            <summary>
+            Hand.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Help">
+            <summary>
+            Hilfe.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.IBeam">
+            <summary>
+            Einfügemarke.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Wait">
+            <summary>
+            Warten.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Pen">
+            <summary>
+            Stift.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Invalid">
+            <summary>
+            Unmöglich/Verboten.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Starting">
+            <summary>
+            Start.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCursors.Scroll">
+            <summary>
+            Scroll.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDStatistics">
+            <summary>
+            Ermittelt statistische Werte eines eindimensionalen Arrays oder sortiert diesen.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDStatistics.SetArray(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt einen eindimensionalen Array als LDStatistics-Zielobjekt fest.
+            
+            Diese Methode muss vor allen anderen aus dieser Klasse aufgerufen werden.
+            </summary>
+            <param name="array">
+            Array der sortiert werden soll.
+            </param>
+            <returns>
+            Array mit sortierten Daten.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.DistNormal(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein Array mit üblicher Aufteilung.
+            </summary>
+            <param name="distMean">mittlere Aufteilung.</param>
+            <param name="distSTD">Standardabweichung der Aufteilung.</param>
+            <param name="size">Anzahl der Punkte.</param>
+            <returns>Ein eindimensionaler Array mit üblicher Aufteilung(Array[x] = y).</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.DistBinomial(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein Array mit binomischer Aufteilung.
+            
+            In etwa wie die Wahrscheinlichkeit k-mal Kopf in 20(n) Münzwürfen zu erhalten, mit einer Wahrscheinlichkeit von 0.5 (p) für jeden Wurf einen Kopf zu erhalten.
+            </summary>
+            <param name="n">Anzahl der Versuche.</param>
+            <param name="p">Wahrscheinlichkeit des Erfolges für jeden Versuch.</param>
+            <returns>Ein eindimensionaler Array mit binomischer Aufteilung, Wahrscheinlichkeit von k Erfolgen (Array[k] = y).</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.DistUniform(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein Array mit einheitlicher Aufteilung.
+            </summary>
+            <param name="rangeMin">unterer Grenzwert.</param>
+            <param name="rangeMax">oberer Grenzwert.</param>
+            <param name="size">Anzahl der Punkte.</param>
+            <returns>Ein eindimensionaler Array mit einheitlicher Aufteilung (Array[x] = y).</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.DistTriangular(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein Array mit triangularer Aufteilung.
+            </summary>
+            <param name="rangeMin">unterer Grenzwert.</param>
+            <param name="rangeMax">oberer Grenzwert.</param>
+            <param name="size">Anzahl der Punkte.</param>
+            <returns>Ein eindimensionaler Array mit triangularer Aufteilung (Array[x] = y).</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.Integrate(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet das Integral eines eindimensionalen Arrays.
+            </summary>
+            <param name="array">zusammenzufassender Array (array[x]=y).</param>
+            <returns>Ein eindimensionaler Array mit dem Integral des Ausgangs-Arrays.</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.Differentiate(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet den abgeleiteten Wert eines eindimensionalen Arrays.
+            </summary>
+            <param name="array">der abzulaeitende Array (array[x]=y).</param>
+            <returns>ein eindimensionaler Array mit der Ableitung des Ausgangsarrays.</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.InterpolateY(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Interpoliert einen eindimensionalen Array und den Wert von y(x) zu finden.
+            
+            Die Werte für X sollten gleichmässig ansteigend sein.
+            </summary>
+            <param name="array">der zu interpolierende Array (array[x]=y).</param>
+            <param name="x">der X-Wert (kann auch ein Array von X-Werten sein).</param>
+            <returns>der interpolierte Wert y oder ein Array von y-Werten.</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.InterpolateX(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Interpoliert einen eindimensionalen Array um den Wert von x(y) zu finden.
+            
+            Die Werte für y sollten gleichmässig mit x ansteigen.
+            </summary>
+            <param name="array">der zu interpolierende Array (array[x]=y).</param>
+            <param name="y">der y-Wert (kann auch ein Array von y-Werten sein).</param>
+            <returns>der interpolierte Wert x oder ein Array von x-Werten.</returns>
+        </member>
+        <member name="M:LitDev.LDStatistics.Frequency(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet die Häufigkeitsverteilung in den Daten eines Arrays.
+            </summary>
+            <param name="array">der Array dessen Häufigkeitsverteilung berechnet werden soll.</param>
+            <param name="bins">Anzahl der Mitglieder die die Daten umfassen.</param>
+            <param name="normalised">Is the frequency normalised to integrate to 1 ("True" or "False").</param>
+            <returns>Häufigkeitsverteilung in Form eines Arrays (array[bin]=frequency).</returns>
+        </member>
+        <member name="P:LitDev.LDStatistics.Sum">
+            <summary>
+            Summe von Punkten.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Sum2">
+            <summary>
+            Summe der Quadrate von Punkten.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Count">
+            <summary>
+            Anzahl der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Mean">
+            <summary>
+            Das arithmetische Mittel der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.HarmonicMean">
+            <summary>
+            Das harmonische Mittel der Punkte (alle Punkte &gt; 0).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.GeometricMean">
+            <summary>
+            Das geometrische Mittel der Punkte (alle Punkte &gt; 0).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.SDev">
+            <summary>
+            Die gewöhnliche Abweichung der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.PDev">
+            <summary>
+            Die Abweichung von der Grundgesamtheit der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Median">
+            <summary>
+            Der Medianwert der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Min">
+            <summary>
+            Der Minimalwert der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Max">
+            <summary>
+            Der Maximalwert der Punkte.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDStatistics.Mode">
+            <summary>
+            Modalwert der Punkte.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDFocus">
+            <summary>
+            TextBoxFocus-Hilfsmittel um den Fokus zu kontrollieren (Textfeld z. Zt. aktiv für Eingaben).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDFocus.IsFocus(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Prüft ob ein benanntes Objekt den Fokus hat.
+            </summary>
+            <param name="shapeName">
+            Name des Objekts (für gewöhnlich ein Textfeld).
+            </param>
+            <returns>
+            "True" oder "False".
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFocus.SetFocus(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Setzt den Fokus auf das benannte Objekt.
+            </summary>
+            <param name="shapeName">
+            Name des Objektes (für gewöhnlich ein Textfeld).
+            </param>
+            <returns>
+            "True" bei Erfolg oder "False" bei Versagen.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFocus.GetFocus">
+            <summary>
+            Ermittelt das Objekt auf dem derzeit der Fokus liegt.
+            </summary>
+            <returns>
+            Name des Objektes (für gewöhnlich ein Textfeld) oder "False".
+            </returns>
+        </member>
+        <member name="F:LitDev.FormWait.components">
+            <summary>
+            Benötigte Variable des Entwicklers.
+            </summary>
+        </member>
+        <member name="M:LitDev.FormWait.Dispose(System.Boolean)">
+            <summary>
+            Freigeben von benutzten Ressourcen.
+            </summary>
+            <param name="disposing">"true" falls Ressourcen freigegeben werden sollen, sonst "false".</param>
+        </member>
+        <member name="M:LitDev.FormWait.InitializeComponent">
+            <summary>
+            Notwendige Methode zur Designer-Unterstützung - den Inhalt 
+            dieser Methode nicht mit dem code editor verändern!
+            </summary>
+        </member>
+        <member name="T:LitDev.LDMusic">
+            <summary>
+            Erweitert die Sound.PlayMusic-Methode so das sie eine Reihe verschiedener Instrumente zur Verfügung stellt.
+            Zusätzlich kann Musik über mehrere Kanäle zugleich gemacht werden.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDMusic.PlayMusic(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Spielt musikalische Noten.
+            </summary>
+            <param name="notes">
+            Eine Reihe von abzuspielenden Noten.  Das Format basiert auf der Music Markup Language die von QBasic unterstützt wird.
+            </param>
+            <example>
+            <code>
+            LDMusic.Instrument = LDMusic.Xylophone
+            LDMusic.PlayMusic("O5 C8 C8 G8 G8 A8 A8 G4 F8 F8 E8 E8 D8 D8 C2")
+            </code>
+            </example>
+        </member>
+        <member name="M:LitDev.LDMusic.PlayNote(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Spielt eine einzelne Note (erlaubt Mehr-Kanal-Instrumente).
+            </summary>
+            <param name="octave">die Oktave (0 bis 8).</param>
+            <param name="note">die Note ("A","F#","B-" usw.).</param>
+            <param name="channel">der MIDI-Kanal (1 bis 16).</param>
+            <returns>Wert der Note die gespielt wird.</returns>
+        </member>
+        <member name="M:LitDev.LDMusic.EndNote(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Stoppt das Spielen einer Note.
+            </summary>
+            <param name="value">die zu stoppende Note (der Wert der von PlayNote() zurückgegeben wurde).</param>
+        </member>
+        <member name="M:LitDev.LDMusic.Reset">
+            <summary>
+            Reset (stoppt sämtliche Musik auf allen Kanälen).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDMusic.InstrumentName(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Namen eines Instruments anhand seiner Nummer.
+            </summary>
+            <param name="instrument">die Nummer des Instruments.</param>
+            <returns></returns>
+        </member>
+        <member name="P:LitDev.LDMusic.Instrument">
+            <summary>
+            Bestimmt das Musikinstrument (1 bis 128).
+            1	Acoustic_Grand_Piano
+            2	Bright_Acoustic_Piano
+            3	Electric_Grand_Piano
+            4	Honky_tonk_Piano
+            5	Electric_Piano_1
+            6	Electric_Piano_2
+            7	Harpsichord
+            8	Clavi
+            9	Celesta
+            10	Glockenspiel
+            11	Music_Box
+            12	Vibraphone
+            13	Marimba
+            14	Xylophone
+            15	Tubular_Bells
+            16	Dulcimer
+            17	Drawbar_Organ
+            18	Percussive_Organ
+            19	Rock_Organ
+            20	Church_Organ
+            21	Reed_Organ
+            22	Accordion
+            23	Harmonica
+            24	Tango_Accordion
+            25	Acoustic_Guitar_nylon
+            26	Acoustic_Guitar_steel
+            27	Electric_Guitar_jazz
+            28	Electric_Guitar_clean
+            29	Electric_Guitar_muted
+            30	Overdriven_Guitar
+            31	Distortion_Guitar
+            32	Guitar_harmonics
+            33	Acoustic_Bass
+            34	Electric_Bass_finger
+            35	Electric_Bass_pick
+            36	Fretless_Bass
+            37	Slap_Bass_1
+            38	Slap_Bass_2
+            39	Synth_Bass_1
+            40	Synth_Bass_2
+            41	Violin
+            42	Viola
+            43	Cello
+            44	Contrabass
+            45	Tremolo_Strings
+            46	Pizzicato_Strings
+            47	Orchestral_Harp
+            48	Timpani
+            49	String_Ensemble_1
+            50	String_Ensemble_2
+            51	SynthStrings_1
+            52	SynthStrings_2
+            53	Choir_Aahs
+            54	Voice_Oohs
+            55	Synth_Voice
+            56	Orchestra_Hit
+            57	Trumpet
+            58	Trombone
+            59	Tuba
+            60	Muted_Trumpet
+            61	French_Horn
+            62	Brass_Section
+            63	SynthBrass_1
+            64	SynthBrass_2
+            65	Soprano_Sax
+            66	Alto_Sax
+            67	Tenor_Sax
+            68	Baritone_Sax
+            69	Oboe
+            70	English_Horn
+            71	Bassoon
+            72	Clarinet
+            73	Piccolo
+            74	Flute
+            75	Recorder
+            76	Pan_Flute
+            77	Blown_Bottle
+            78	Shakuhachi
+            79	Whistle
+            80	Ocarina
+            81	Lead_1_square
+            82	Lead_2_sawtooth
+            83	Lead_3_calliope
+            84	Lead_4_chiff
+            85	Lead_5_charang
+            86	Lead_6_voice
+            87	Lead_7_fifths
+            88	Lead_8_bass_lead
+            89	Pad_1_new_age
+            90	Pad_2_warm
+            91	Pad_3_polysynth
+            92	Pad_4_choir
+            93	Pad_5_bowed
+            94	Pad_6_metallic
+            95	Pad_7_halo
+            96	Pad_8_sweep
+            97	FX_1_rain
+            98	FX_2_soundtrack
+            99	FX_3_crystal
+            100	FX_4_atmosphere
+            101	FX_5_brightness
+            102	FX_6_goblins
+            103	FX_7_echoes
+            104	FX_8_sci_fi
+            105	Sitar
+            106	Banjo
+            107	Shamisen
+            108	Koto
+            109	Kalimba
+            110	Bag_pipe
+            111	Fiddle
+            112	Shanai
+            113	Tinkle_Bell
+            114	Agogo
+            115	Steel_Drums
+            116	Woodblock
+            117	Taiko_Drum
+            118	Melodic_Tom
+            119	Synth_Drum
+            120	Reverse_Cymbal
+            121	Guitar_Fret_Noise
+            122	Breath_Noise
+            123	Seashore
+            124	Bird_Tweet
+            125	Telephone_Ring
+            126	Helicopter
+            127	Applause
+            128	Gunshot
+            </summary>
+        </member>
+        <member name="P:LitDev.LDMusic.Velocity">
+            <summary>
+            Legt die Schnelle der Tastenanschläge fest (1 bis 128).
+            Wie fest eine Taste gedrückt wurde (Voreinstellung 100).
+            </summary>
+        </member>
+        <member name="T:LitDev.LDCommPort">
+            <summary>
+            Sendet und empfängt Daten über einen serielle Port
+            (Original Code by Nino Carrillo)
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCommPort.OpenPort(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Öffnet einen seriellen Port. Setzt 8 Databits voraus, keine Parität.
+            </summary>
+            <param name="portname">
+            Zeichenkette zur Identifikation des zu öffnenden Ports in der Form "COM8". Falls die Zeichenkette ungültig ist oder der Port nicht existiert wird der höchste verfügbare Port geöffnet.
+            </param>
+            <param name="baudrate">
+            Ganzzahlige Baud-Rate
+            </param>
+        </member>
+        <member name="M:LitDev.LDCommPort.RXByte">
+            <summary>
+            Liest ein Byte vom geöffneten seriellen Port ein und gibt dessen Wert als Integer zurück.
+            </summary>
+            <returns>
+            Eine ganze Zahl von 0 bis 255.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDCommPort.RXChar">
+            <summary>
+            Liest ein Byte vom geöffneten seriellen Port ein und gibt dessen Wert als Unicode-Zeichen zurück.
+            </summary>
+            <returns>
+            Ein Unicode-Zeichen.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDCommPort.RXAll">
+            <summary>
+            Liest alle vorhandenen Bytes aus dem Input-Puffer des geöffneten Ports.
+            </summary>
+            <returns>
+            Zeichenkette mit Bytes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDCommPort.ClosePort">
+            <summary>
+            Schliesst den geöffneten seriellen Port.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDCommPort.AvailablePorts">
+            <summary>
+            Listet alle verfügbaren seriellen Ports auf.
+            </summary>
+            <returns>
+            Ein Array welches die Namen der verfügbaren seriellen Ports enthält.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDCommPort.TXByte(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Sendet ein Byte an den seriellen Port.
+            </summary>
+            <param name="databyte">
+            das zu sendende Byte.
+            </param>
+        </member>
+        <member name="M:LitDev.LDCommPort.TXString(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Sendet eine Zeichenkette an den seriellen Port.
+            </summary>
+            <param name="datastring">
+            zu sendende Zeichenkette.
+            </param>
+        </member>
+        <member name="M:LitDev.LDCommPort.SetHandshake(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Schaltet Hardware Flow Control ein oder aus.
+            </summary>
+            <param name="handshake">
+            "H" oder "h" um Hardware Flow Control einzuschalten, beliebiges anderes Zeichen für aus.
+            </param>
+        </member>
+        <member name="E:LitDev.LDCommPort.DataReceived">
+            <summary>
+            Ereignis, das stattfindet wenn der serielle Port Daten empfängt.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDImage">
+            <summary>
+            Stellt verschiedene zusätliche Methoden zur Bearbeitung und Darstellungen von Bildern die in der ImageList gespeichert sind.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDImage.SetPixel(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt die Farbe für ein Pixel fest.
+            </summary>
+            <param name="image">der Name des Bildes in der ImageList.</param>
+            <param name="x">das x-Pixel.</param>
+            <param name="y">das y-Pixel.</param>
+            <param name="colour">einzusetzende Farbe.</param>
+        </member>
+        <member name="M:LitDev.LDImage.GetPixel(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Farbe eines Pixels.
+            </summary>
+            <param name="image">der Name des Bildes in der ImageList.</param>
+            <param name="x">das x-Pixel.</param>
+            <param name="y">das y-Pixel.</param>
+            <returns>Farbe des Pixels.</returns>
+        </member>
+        <member name="M:LitDev.LDImage.Save(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Speichert ein Bild aus der ImageList als jpg.
+            </summary>
+            <param name="image">der Name des zu speichernden Bildes in der ImageList.</param>
+            <param name="fileName">Dateiname unter welchem das Bild gespeichert werden soll.</param>
+        </member>
+        <member name="M:LitDev.LDImage.Remove(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Entfernt ein Bild aus der ImageList.
+            </summary>
+            <param name="image">Name des aus der ImageList zu entfernenden Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.Copy(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert ein Bild aus der ImageList.
+            </summary>
+            <param name="image">Name des zu kopierenden Bildes.</param>
+            <returns>Name des neuen Bildes in ImageList oder "" bei Misserfolg.</returns>
+        </member>
+        <member name="M:LitDev.LDImage.Resize(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt eine neue Grösse für ein Bild aus der ImageList fest.
+            </summary>
+            <param name="image">Name des zu ändernden Bildes.</param>
+            <param name="width">neue Breite in Pixel.</param>
+            <param name="height">neue Höhe in Pixel.</param>
+        </member>
+        <member name="M:LitDev.LDImage.Add(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt Farbwerte zu einem Bild in ImageList hinzu.
+            Ein Bild hat Pixel mit Werten für Rot, Grün und Blau im Bereich von 0 bis 255.
+            </summary>
+            <param name="image">Name des zu ändernden Bildes.</param>
+            <param name="red">hinzuzufügender Rot-Wert.</param>
+            <param name="green">hinzuzufügender Grün-Wert.</param>
+            <param name="blue">hinzuzufügender Blau-Wert.</param>
+        </member>
+        <member name="M:LitDev.LDImage.Multiply(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Multipiziert Farbwerte eines Bildes.
+            Ein Bild hat Pixel mit Werten für Rot, Grün und Blau im Bereich von 0 bis 255.
+            </summary>
+            <param name="image">Name des zu ändernden Bildes.</param>
+            <param name="red">Wert der mit dem Rot-Wert multipliziert werden soll.</param>
+            <param name="green">Wert der mit dem Grün-Wert multipliziert werden soll.</param>
+            <param name="blue">Wert der mit dem Blau-Wert multipliziert werden soll.</param>
+        </member>
+        <member name="M:LitDev.LDImage.Statistics(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt Minimum, Maximum, Mittel und STD für Pixel.
+            </summary>
+            <param name="image">Name des ImageList-Bildes.</param>
+            <returns>Ein Array mit statistischen Werten (0 bis 255), indiziert durch "Min", "Max", "Mean", "STD" und 1,2,3 für R,G,B.</returns>
+        </member>
+        <member name="M:LitDev.LDImage.Histogram(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt eine Statistik der Pixel-Werte.
+            </summary>
+            <param name="image">Name des ImageList-Bildes.</param>
+            <returns>Ein Array mit Farbstatistik, indiziert durch 1,2,3 für R,G,B und 0 bis 255.</returns>
+        </member>
+        <member name="M:LitDev.LDImage.AddImages(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kombiniert 2 Bilder.
+            Ein Bild hat Pixel mit Werten für Rot, Grün und Blau im Bereich von 0 bis 255.
+            Beide Bilder müssen die selbe Grösse haben.
+            </summary>
+            <param name="image1">Name des ersten ImageList-Bildes.</param>
+            <param name="image2">Name des zweiten ImageList-Bildes.</param>
+            <returns>Name des neuen ImageList-Bildes oder "" bei Misserfolg.</returns>
+        </member>
+        <member name="M:LitDev.LDImage.DifferenceImages(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Differenziert 2 Bilder.
+            Ein Bild hat Pixel mit Werten für Rot, Grün und Blau im Bereich von 0 bis 255.
+            Beide Bilder müssen die selbe Grösse haben.
+            </summary>
+            <param name="image1">Name des ersten ImageList-Bildes.</param>
+            <param name="image2">Name des zweiten ImageList-Bildes.</param>
+            <returns>Name des neuen ImageList-Bildes oder "" bei Misserfolg.</returns>
+        </member>
+        <member name="M:LitDev.LDImage.EffectRed(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Rot.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectGreen(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Grün.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectBlue(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Blau.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectGray(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Schwarz-Weiss.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectInverse(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Invers (Negativ).
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectYellow(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Gelb.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectCyan(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Cyan.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectMagenta(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert nach Magenta.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectSnow(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einen Schnee-Effekt ein.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectFuzzy(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einen Unschärfe-Effekt ein.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectContrast(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt höheren Kontrast ein.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectBlocks(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einen Klötzchen-Effekt ein.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectReflect(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einen waagerechten Reflektions-Effekt ein.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="M:LitDev.LDImage.EffectJagged(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt einen gezackten Effekt ein.
+            </summary>
+            <param name="image">Name des zu verändernden ImageList-Bildes.</param>
+        </member>
+        <member name="T:LitDev.LDUtilities">
+            <summary>
+            Diese Klasse stellt allgemeine Methoden zur Verfügung.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDUtilities.GWCapture(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Speichert das GraphicsWindow als Bilddatei (png, jpg, bmp, gif oder tiff).
+            
+            Das Fenster muss sichtbar sein. Ein kurzes Abwarten (z.B. Program.Delay()) kann vor dem Aufruf dieser Methode nötig sein.
+            </summary>
+            <param name="fileName">
+            Dateiname für das zu speichernde Bild (*.png, *.jpg, *.bmp, *.gif oder *.tiff).
+            </param>
+            <param name="border">
+            soll der Rahmen des Fensters Bestandteil des Bildes sein? ("True" für ja, "False" für nein).
+            </param>
+            <returns>
+            nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.TWCapture(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Speichert das TextWindow als Bilddatei (png, jpg, bmp, gif oder tiff).
+            
+            Das Fenster muss sichtbar sein. Ein kurzes Abwarten (z.B. Program.Delay()) kann vor dem Aufruf dieser Methode nötig sein.
+            </summary>
+            <param name="fileName">
+            Dateiname für das zu speichernde Bild (*.png, *.jpg, *.bmp, *.gif oder *.tiff).
+            </param>
+            <param name="border">
+            soll der Rahmen des Fensters Bestandteil des Bildes sein? ("True" für ja, "False" für nein).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.GWPrint(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Druckt den Inhalt des GraphicsWindow.
+            
+            Das Fenster muss sichtbar sein. Ein kurzes Abwarten (z.B. Program.Delay()) kann vor dem Aufruf dieser Methode nötig sein.
+            </summary>
+            <param name="border">
+            soll der Rahmen des Fensters Bestandteil des Bildes sein? ("True" für ja, "False" für nein).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.TWPrint(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Druckt den Inhalt des TextWindow.
+            
+            Das Fenster muss sichtbar sein. Ein kurzes Abwarten (z.B. Program.Delay()) kann vor dem Aufruf dieser Methode nötig sein.
+            </summary>
+            <param name="border">
+            soll der Rahmen des Fensters Bestandteil des Bildes sein? ("True" für ja, "False" für nein).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.PauseUpdates">
+            <summary>
+            Pausiert das automatische Neuzeichnen des GraphicsWindow.
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.ResumeUpdates">
+            <summary>
+            Nimmt das pausierte Neuzeichnen des GraphicsWindow wieder auf.
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.Version">
+            <summary>
+            Ermittelt die Versionsnummer dieser LitDev-Extension und zeigt ein Fenster mit dieser Information und ChangeLog.
+            </summary>
+            <returns>
+            die Versionsnummer.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDUtilities.KeyDown(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt ob eine Taste gedrückt wird.
+            Nützlich für einfache Tastatur-Steuerung z.B. bei einem Spiel.
+            </summary>
+            <param name="key">Taste deren Status abgefragt werden soll z.B. "Space".</param>
+            <returns>"True" wenn die Taste gedrückt wird, sonst "False"</returns>
+        </member>
+        <member name="P:LitDev.LDUtilities.GWState">
+            <summary>
+            Status des GraphicsWindow (Normal 0, Minimiert 1, Maximiert 2).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDUtilities.Icon">
+            <summary>
+            Legt ein Icon (Symbol) für das GraphicsWindow fest.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDProcess">
+            <summary>
+            Steuert externe Anwendungen.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDProcess.Start(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Startet eine externe Anwendung.
+            </summary>
+            <param name="application">
+            Verzeichnis- und Dateiname der zu startenden Anwendung, z.B. C:/Programme/Microsoft/Small Basic/SB.exe.
+            </param>
+            <returns>
+            ID des gestarteten Prozesses oder -1 bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDProcess.Stop(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Stoppt einen externen Prozess.
+            </summary>
+            <param name="ID">
+            ID des zu stoppenden Prozesses.
+            </param>
+            <returns>
+            "True" bei Erfolg, "False" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDProcess.GetProcesses">
+            <summary>
+            Erstellt eine Liste aller zur Zeit laufenden Prozesse auf dem System.
+            </summary>
+            <returns>
+            Ein Array mit den Namen aller System-Prozesse, indiziert durch die ID des Prozesses.
+            </returns>
+        </member>
+        <member name="F:LitDev.FormMatrix.components">
+            <summary>
+            Benötigte Variable des Entwicklers.
+            </summary>
+        </member>
+        <member name="M:LitDev.FormMatrix.Dispose(System.Boolean)">
+            <summary>
+            Gibt benutzte Ressourcen wieder frei.
+            </summary>
+            <param name="disposing">"true" falls Ressourcen freigegeben werden sollen, sonst "false".</param>
+        </member>
+        <member name="M:LitDev.FormMatrix.InitializeComponent">
+            <summary>
+            Notwendige Methode zur Designer-Unterstützung - den Inhalt 
+            dieser Methode nicht mit dem code editor verändern!
+            </summary>
+        </member>
+        <member name="T:LitDev.LDSort">
+            <summary>
+            Sortiert Arrays (Zeichenketten können mit und ohne Beachtung von Gross- und Kleinschreibung sortiert werden).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDSort.ByIndex(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Sortiert ein Array beliebiger Dimension nach dem Index (key).
+            </summary>
+            <param name="array">
+            Zu sortierender Array.
+            </param>
+            <returns>
+            Ein sortierter Array.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDSort.ByValue(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Sortiert einen eindimensionalen Array nach Wert (die Indizes werden neu nummeriert, Start bei 1).
+            </summary>
+            <param name="array">
+            Zu sortierender Array.
+            </param>
+            <returns>
+            Ein sortierter Array.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDSort.CaseSensitive">
+            <summary>
+            Zeichenketten-Vergleich unter Beachtung von Gross- und Kleinschreibung, "True" für ja, sonst "False".
+            </summary>
+        </member>
+        <member name="T:LitDev.LDEmail">
+            <summary>
+            Email-Methoden.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDEmail.Send">
+            <summary>
+            Sendet eine Email.
+            Voreingestellter Smtp client ist "smtp.gmail.com" und voreingestellter Port ist 587.  Die folgenden und auch andere Email-Clients könnten ebenso funktionieren.
+            "smtp.live.com" (Hotmail)
+            "smtp.mail.yahoo.com"
+            
+            Ein Minimum der "From, Password und Recipient"- Eigenschaften müssen zuerst festgelegt werden.
+            Die "From" und "Password"-Eigenschaften sollten den LogIn-Daten des Email-Anbieters entsprechen.
+            Zusätzlich sollten "Subject" (Betreff) und "Body" (Text, Inhalt der Email) festgelegt werden.
+            Die "Attachment" (Anhänge)-Eigenschaft kann optional einen Dateipfad oder "" für keinen Anhang enthalten.
+            
+            Es können nicht mehr als EINE Email pro Minute versandt werden.
+            </summary>
+            <returns>"" bei Erfolg, sonst eine Fehlermeldung.</returns>
+        </member>
+        <member name="T:LitDev.LDPhysics">
+            <summary>
+            Physics-Erweiterung verwendet Box2D-Engine.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddChain(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt eine Kette zwischen zwei existierenden Shapes hinzu.
+            </summary>
+            <param name="shape1">
+            Erstes Shape.
+            </param>
+            <param name="shape2">
+            Zweites Shape.
+            </param>
+            <returns>
+            Name der Kette.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddFixedAnchor(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt ein kleines, unsichtbares Shape ein, welches als Ankerpunkt (z.B. für eine Kette) benutzt werden kann.
+            </summary>
+            <param name="posX">
+            X-Koordinate des Ankerpunktes.
+            </param>
+            <param name="posY">
+            Y-Koordinate des Ankerpunktes.
+            </param>
+            <returns>
+            Name des Ankerpunktes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddFixedShape(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt der Physics-Engine ein existierendes SmallBasic-Shape als festes (undynamisches) Shape mit Reaktionen auf andere Shapes hinzu (z.B. Reibung, Kollision, Rückstoss).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="friction">
+            Reibungswert (gewöhnlich 0.0 bis 1.0).
+            </param>
+            <param name="restitution">
+            Rückfederung/Abprallwert (gewöhnlich 0.0 bis 1.0).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddInactiveShape(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt der Physics-Engine ein existierendes SmallBasic-Shape als inaktives (undynamisch und ohne Interaktion mit anderen) Shape hinzu, welches sich nur mit der PanView-Methode bewegt.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddMovingAnchor(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt ein kleines, unsichtbares und hoch verdichtetes Shape hinzu, welches als beweglicher Ankerpunkt benutzt werden kann.
+            </summary>
+            <param name="posX">
+            X-Koordinate des Ankerpunktes.
+            </param>
+            <param name="posY">
+            Y-Koordinate des Ankerpunktes.
+            </param>
+            <returns>
+            Shape-Name des Ankerpunktes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddMovingShape(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt der Physics-Engine ein existierendes SmallBasic-Shape als bewegliches (dynamisches) Shape hinzu.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="friction">
+            Reibungswert (gewöhnlich 0.0 bis 1.0).
+            </param>
+            <param name="restitution">
+            Rückfederung/Abprallwert (gewöhnlich 0.0 bis 1.0).
+            </param>
+            <param name="density">
+            Dichte des Shapes (Voreinstellung 1).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AddRope(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Fügt ein Seil zwischen zwei existierenden Shapes hinzu.
+            </summary>
+            <param name="shape1">
+            Erstes Shape.
+            </param>
+            <param name="shape2">
+            Zweites Shape.
+            </param>
+            <returns>
+            Name des Seils.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AttachShapes(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Verbindet zwei Shapes so das sie sich gemeinsam als Einheit bewegen.
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.AttachShapesWithRotation(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Verbindet zwei Shapes so das sie sich gemeinsam als Einheit bewegen, aber erlaubt den Shapes einander zu umkreisen oder rotieren.
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.DetachShapes(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Trennt zwei vormals verbundene Shapes.
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.DisconnectShape(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Entfernt ein Shape aus der Physics-Engine ohne das Shape aus der Shapes-Liste zu löschen.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.DoTimestep">
+            <summary>
+            Übergibt kurz an die Physics-Engine um Bewegungen und Positionen aller Shapes neu zu berechnen.
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetAngle(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Rotationswinkel eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Rotationswinkel in Grad.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetCollisions(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt alle Shapes die während des letzten DoTimestep() mit dem angegebenen Shape kollidiert sind.
+            </summary>
+            <param name="shapeName">
+            Das auf Kollisionen zu prüfende Shape.
+            </param>
+            <returns>
+            Ein Array mit Namen aller Shapes die mit dem geprüften kollidiert sind. (könnte auch leer sein "").
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetInertia(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt das Trägheitsmoment eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des SHapes.
+            </param>
+            <returns>
+            Trägheitsmoment des Shapes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetMass(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Masse eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Masse des Shapes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetPosition(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Mittelpunkt eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Ein Array mit 2 Elementen welche die X- und Y-Koordinaten des Mittelpunktes beschreiben.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetRotation(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Rotationsgeschwindigkeit eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Rotationsgeschwindigkeit in Grad pro Sekunde.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetShapeAt(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt das Shape (falls vorhanden) an der angegebenen Position.
+            </summary>
+            <param name="posX">
+            X-Koordinate.
+            </param>
+            <param name="posY">
+            Y-Koordinate.
+            </param>
+            <returns>
+            Name des Shapes oder "" wenn sich dort keines befindet.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GetVelocity(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die lineare Geschwindigkeit des Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Ein Array mit 2 Elementen welche die Geschwindigkeit des Shapes angeben.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.GroupShapes(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Verbindet zwei Shapes fest miteinander, so das sich gemeinsam bewegen.
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.Help">
+            <summary>
+            Diese Methode zeigt lediglich diese Hilfe an.
+            
+            Die LD-Erweiterung verwendet Box2D (http://box2d.org) als Engine und stellt eine Verbindung zwischen Box2D und SmallBasic her.
+            
+            Nur Shapes, welche mit der Physics-Engine verbunden wurden können auch von der Enginge berücksichtigt werden. So können gleichzeitig auch normale Shapes verwendet werden(z.B. für den Hintergrund). Wurde ein Shape an die Enginge gekoppelt, ist es am Besten mit diesen nur noch über die Methoden der Klasse LDShapes zu interagieren.  Alle Positionen sind angegeben in SmallBasic-GraphicsWindow-Pixeln und beziehen sich auf den Mittelpunkt des Shapes.
+            
+            Image- und Textshapes werden wie Rechtecke behandelt und Ellipsen wie Kreise; es werden auch Dreiecke und convexe Polygone unterstützt, aber keine Linien. Images können ebenfalls wie Kreise behandelt werden indem man die Eigenschaft LoadImagesAsCircles auf "True" setzt.
+            
+            Es sind keine komplereren Maschinenteile, Getriebe usw. in dieser Erweiterung enthalten - besorgen Sie sich Box2D um wenn Sie mehr wollen.
+            
+            Problematisch kann es werden, wenn kleine, sich sehr schnell bewegende Objekte verwendet werden. Diese können manchmal scheinbar durch andere, kleine Objekte hindurchfliegen ohne anzustossen (siehe auch SetBullet).
+            
+            Auch wenn Shapes sehr unterschiedliche Grössen oder Masse haben, besonders wenn sehr grosse Shapes miteinander verbunden wurden kann es Probleme geben.  Es kann dann nötig sein, die Dichte (density) dieser Objekte anzupassen (Verankern -Anchors- sind eine Möglichkeit dieses etwas zu automatisieren), ansonsten ist die Voreinstellung für Dichte von 1 ein guter Weg. Widerstehe der Versuchung, zu viele Shapes miteinander zu verbinden.
+            
+            Es wäre möglich, die Stabilität einiger 'schwieriger' Modelle zu erhöhen indem man die Timestep-Einstellungen benutzt, doch die voreingestellten Werte sind für die meisten Fälle ausreichend.
+            
+            Die Methoden der Physics-Engine dürfen nicht direkt aus einer Small Basic Sub-Routine aufgerufen werden. Daher sollte man dort nur Variablen einsetzen, die in der Hauptschleife des Programmes die notwendigen Aufrufe an die Physics-Engine auslösen.
+            
+            Es gibt Small Basic Beispielprogramme und einen 'Getting Started Guide' die dieser Erweiterung beiliegen. Diese wären ein guter Anfang um die neuen Möglichkeiten kennenzulernen.
+            
+            Fehlermeldungen und Probleme bitte im SmallBasic Forum (http://social.msdn.microsoft.com/Forums/en-US/smallbasic/threads), vorher bitte aber den Programmcode möglichst vereinfachen und kürzen um das Problem soweit es geht zu isolieren.
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.PanView(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Schwenkt die Kameraansicht, inklusive der Fensterbegrenzungen.
+            </summary>
+            <param name="panHorizontal">
+            Schwenkt die Kamera horizontal (negative Werte für 'nach links').
+            </param>
+            <param name="panVertical">
+            Schwenkt die Kamera vertikal (negative Werte für 'hoch').
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.RemoveChain(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Entfernt eine Kette.
+            </summary>
+            <param name="shapeName">
+            Name der Kette.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.RemoveFrozen">
+            <summary>
+            Entfernt alle angehaltenen Shapes - (ausserhalb der AABB befindlich = 'aus dem Rahmen gefallen').
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.RemoveRope(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Entfernt ein Seil.
+            </summary>
+            <param name="shapeName">
+            Name des Seils.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.RemoveShape(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Entfernt ein Shape.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.Reset">
+            <summary>
+            Zurücksetzen (löscht alle Verbindungen zwischen Shapes und der Physics-Engine).
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetAABB(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Die AABB (axis-aligned bounding box) - der Rahmen des Physics-Universums. Ein Reset-Aufruf muss danach unbedingt erfolgen wenn diese Grenzen geändert werden.
+            </summary>
+            <param name="minX">
+            Linke Koordinate des Universums (Voreinstellung -100).
+            </param>
+            <param name="maxX">
+            Rechte Koordinate des Universums (Voreinstellung 200).
+            </param>
+            <param name="minY">
+            Obere Koordinate des Universums (Voreinstellung -100).
+            </param>
+            <param name="maxY">
+            Untere Koordinate des Universums (Voreinstellung 200).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetBoundaries(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt feste Begrenzungen fest (Werte ausserhalb des GraphicsWindow entfernen die Begrenzung).
+            </summary>
+            <param name="left">
+            X-Wert der linken Begrenzung.
+            </param>
+            <param name="right">
+            X-Wert der rechten Begrenzung.
+            </param>
+            <param name="top">
+            Y-Wert der oberen Begrenzung.
+            </param>
+            <param name="bottom">
+            Y-Wert der unteren Begrenzung.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetBullet(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erklärt ein Shape zum 'Projetil' (bullet). Dies verhindert das Hindurchfliegen bei kleinen, sich schnell bewegenden Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetDamping(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt einen Dämpfungsfaktor für ein Shape fest (Voreinstellung 0).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="linear">
+            Linearer Dämpfungsfaktor.
+            </param>
+            <param name="angular">
+            Schräger/winkliger Dämpfungsfaktor.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetForce(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt eine Kraft fest die einem Shape zugeordnet werden soll (kleine Erinnerungshilfe: F = ma).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="forceX">
+            X-Komponente der Kraft.
+            </param>
+            <param name="forceY">
+            Y-Komponente der Kraft.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetGravity(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt Richtung und Stärke der Gravitation fest (Voreinstellung 0 und 100).
+            </summary>
+            <param name="gravX">
+            X-Komponente der Gravitation.
+            </param>
+            <param name="gravY">
+            Y-Komponente der Gravitation.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetImpulse(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Gibt einem Shape einen Impuls (z.B. Anschieben eines Wagens, geradeaus).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="impulseX">
+            X-Komponente des Impulses.
+            </param>
+            <param name="impulseY">
+            Y-Komponente des Impulses.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetPosition(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Setzt die Position eines Shapes zurück.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="posX">
+            X-Komponente des Shape-Mittelpunktes.
+            </param>
+            <param name="posY">
+            Y-Komponente des Shape-Mittelpunktes.
+            </param>
+            <param name="angle">
+            Rotationswinkel in Grad.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetRotation(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt die Rotationsgeschwindigkeit für ein Shape fest.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="rotation">
+            Rotationsgeschwindigkeit in Grad pro Sekunde.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetTorque(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt ein Drehmoment für ein Shape fest (z.B. Antreiben eines Rades, kreisförmig).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="torque">
+            Anzubringendes Drehmoment.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.SetVelocity(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt die Bewegungsgeschwindigkeit für ein Shape fest.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="velX">
+            X-Komponente der Geschwindigkeit.
+            </param>
+            <param name="velY">
+            Y-Komponente der Geschwindigkeit.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.TimestepControl(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Zum Anpassen der voreingestellten Timestep-Steuerungsparameter.
+            </summary>
+            <param name="timestep">
+            Time-step (Voreinstellung 0.025).
+            </param>
+            <param name="velocityIterations">
+            Geschwindigkeitsiteration (Voreinstellung 6).
+            </param>
+            <param name="positionIterations">
+            Positionsiteration (Voreinstellung 2).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.UngroupShapes(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Aufheben einer Gruppierung zweier Shapes.
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDPhysics.UnsetBullet(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Aufheben des 'Bullet-Status' eines Shapes. Das Shape wird dann wieder wie ein normales Shape behandelt.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDPhysics.ChainColour">
+            <summary>
+            Farbe die für Ketten verwendet werden soll.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.LoadImagesAsCircles">
+            <summary>
+            Schalter um ein Image-Shape als kreisförmiges geladen werden soll - "True" oder "False" (Voreinstellung ist "False").
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.PositionIterations">
+            <summary>
+            Die Positionsiterationen der Physics-Engine (Voreinstellung 2).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.RopeColour">
+            <summary>
+            Farbe die für Seile verwendet werden soll.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.Scaling">
+            <summary>
+            Skalierung der Physics-Engine (Pixel/m, Voreinstellung 10).  Es wird davon abgeraten dies zu ändern.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.TimeStep">
+            <summary>
+            Die Timestep-Dauer der Physics-Engine (Voreinstellung 0.025).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.VelocityIterations">
+            <summary>
+            Die Geschwindigkeitsiteration der Physics-Engine (Voreinstellung 6).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDPhysics.VelocityThreshold">
+            <summary>
+            Schwellenwert der Physics-Engine für nicht-elastische Kollisionen 'klebende Wände' (Voreinstellung 1).
+            </summary>
+        </member>
+        <member name="T:LitDev.LDTrig">
+            <summary>
+            verschiedene Trigonometrie-Methoden und Funktionen in Grad.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDTrig.Sin(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Sinus eines Winkels in Grad.
+            </summary>
+            <param name="angle">
+            Winkel in Grad.
+            </param>
+            <returns>
+            Sinus des Winkels.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.Cos(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Cosinus eines Winkels in Grad.
+            </summary>
+            <param name="angle">
+            Winkel in Grad.
+            </param>
+            <returns>
+            Cosinus des Winkels.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.Tan(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Tangens eines Winkels in Grad.
+            </summary>
+            <param name="angle">
+            Winkel in Grad.
+            </param>
+            <returns>
+            Tangens des Winkels.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.ArcSin(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Arkussinus in Grad.
+            </summary>
+            <param name="sin">
+            Sinus des Winkels.
+            </param>
+            <returns>
+            Winkel in Grad.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.ArcCos(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Arkuscosinus in Grad.
+            </summary>
+            <param name="cos">
+            Cosinus des Winkels.
+            </param>
+            <returns>
+            Winkel in Grad.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.ArcTan(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Arkustangens in Grad.
+            </summary>
+            <param name="tan">
+            Tangens des Winkels.
+            </param>
+            <returns>
+            Winkel in Grad.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.Convert2Radial(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet Distanz und Winkel zwischen zwei Punkten.
+            </summary>
+            <param name="x1">
+            X-Koordinate von Punkt 1.
+            </param>
+            <param name="y1">
+            Y-Koordinate von Punkt 1.
+            </param>
+            <param name="x2">
+            X-Koordinate von Punkt 2.
+            </param>
+            <param name="y2">
+            Y-Koordinate von Punkt 2.
+            </param>
+            <returns>
+            Ein Array mit 2 Elementen; die Distanz und der Winkel in Grad von Punkt 1 zu Punkt 2.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.Convert2Cartesian(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet die Koordinaten eines Punktes 2, aus den Koordinaten eines Punkt 1 und dessen Distanz und Winkel zu Punkt 2.
+            </summary>
+            <param name="x1">
+            X-Koordinate von Punkt 1.
+            </param>
+            <param name="y1">
+            Y-Koordinate von Punkt 1.
+            </param>
+            <param name="dist">
+            Distanz zu Punkt 2.
+            </param>
+            <param name="angle">
+            Winkel zu Punkt 2 in Grad.
+            </param>
+            <returns>
+            Ein Array mit 2 Elementen; die Koordinaten von Punkt 2.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDTrig.Rotate(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Rotiert Punkt 2 im Uhrzeigersinn um Punkt 1.
+            </summary>
+            <param name="x1">
+            X-Koordinate von Punkt 1.
+            </param>
+            <param name="y1">
+            Y-Koordinate von Punkt 1.
+            </param>
+            <param name="x2">
+            X-Koordinate von Punkt 2.
+            </param>
+            <param name="y2">
+            Y-Koordinate von Punkt 2.
+            </param>
+            <param name="angle">
+            Winkel den Punkt 2 um Punkt 1 rotiert werden soll in Grad.
+            </param>
+            <returns>
+            Ein Array mit 2 Elementen; die Koordianten des rotierten Punkt 2.
+            </returns>
+        </member>
+        <member name="T:LitDev.LDShapes">
+            <summary>
+            Erweiterte Funktionen und Methoden für Shapes.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDShapes.ResetTurtle">
+            <summary>
+            Setzt Turtle nach einem GraphicsWindow.Clear() zurück.
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.MoveLine(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Bewegt ein Linien-Shape.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes (eine Linie, erstellt mit Shapes.AddLine).
+            </param>
+            <param name="x1">
+            Erste X-Koordinate an die die Linie bewegt werden soll.
+            </param>
+            <param name="y1">
+            Erste Y-Koordinate an die die Linie bewegt werden soll.
+            </param>
+            <param name="x2">
+            Zweite X-Koordinate an die die Linie bewegt werden soll.
+            </param>
+            <param name="y2">
+            Zweite Y-Koordinate an die die Linie bewegt werden soll.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.MoveTriangle(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Bewegt ein Dreiecks-Shape.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes (ein Dreieck, erstellt mit Shapes.AddTriangle).
+            </param>
+            <param name="x1">
+            Erste X-Koordinate an die das Dreieck bewegt werden soll.
+            </param>
+            <param name="y1">
+            Erste Y-Koordinate an die das Dreieck bewegt werden soll.
+            </param>
+            <param name="x2">
+            Zweite X-Koordinate an die das Dreieck bewegt werden soll.
+            </param>
+            <param name="y2">
+            Zweite Y--Koordinate an die das Dreieck bewegt werden soll.
+            </param>
+            <param name="x3">
+            Dritte X-Koordinate an die das Dreieck bewegt werden soll.
+            </param>
+            <param name="y3">
+            Dritte Y-Koordinate an die das Dreieck bewegt werden soll.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.MovePolygon(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Bewegt ein vieleckiges Shape.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes (ein Polygon, erstellt mit LDShapes.AddPolygon).
+            </param>
+            <param name="points">
+            Ein Array mit den neuen Koordinaten der Ecken des Vielecks in Form points[i][1] = x, points[i][2] = y.
+            
+            Die Mindestanzahl der Eckpunkte beträgt 3, kann für jeden Aufruf geändert werden.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.AddPolygon(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein vieleckiges Shape (Polygon).
+            </summary>
+            <param name="points">
+            Ein Array mit den Koordinaten der Ecken des Polygons in der Form points[i][1] = x, points[i][2] = y.
+            
+            Die Mindestanzahl der Eckpunkte beträgt 3.
+            </param>
+            <returns>
+            Name des Polygon-Shapes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.OverlapBox(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Prüft ob sich die Grenzen zweier eckiger Shapes überschneiden (Kollisionserkennung).
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            "True" wenn sich die Shapes überschneiden, sonst "False".
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.OverlapCircle(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Prüft ob sich die Grenzen zweier runder Shapes überschneiden (Kollisionserkennung).
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            "True" wenn sich die Shapes überschneiden, sonst "False".
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.Overlap(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Prüft ob sich die Grenzen zweier beliebiger Shapes überschneiden (Kollisionserkennung).
+            Das erste Shape darf nicht rotiert oder vergrössert (zoomed) sein.
+            </summary>
+            <param name="shape1">
+            Name des ersten Shapes.
+            </param>
+            <param name="shape2">
+            Name des zweiten Shapes.
+            </param>
+            <returns>
+            "True" wenn sich die Shapes überschneiden, sonst "False".
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.BrushColour(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt die Pinselfarbe für ein Shape fest (Brush colour).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="colour">
+            Neue Pinselfarbe.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.PenColour(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt die Stiftfarbe für ein Shape fest (Pen colour).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="colour">
+            Neue Stiftfarbe.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.PenWidth(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt die Dicke des Stiftes für ein Shape fest.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="width">
+            Neue Strichdicke.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.PenStyle(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt den Zeichenstil des Stiftes für ein Shape fest (gestrichelt, gepunktet usw.).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="dash">
+            Strichlänge.
+            </param>
+            <param name="space">
+            Länge der Unterbrechung zwischen den Strichen.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.ZIndex(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt den Z-Index für ein Shape fest (negativ für im Hintergrund, positiv im Vordergrund - Voreinstellung 0).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="z_index">
+            Der Z-Index (0, positive oder negative Ganze Zahlen).
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.ReSize(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt neue Breite und Höhe für ein Shape fest (eine uneingeschränkte Möglichkeit zum Zoomen).
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="width">
+            Neue Breite des Shapes.
+            </param>
+            <param name="height">
+            Neue Höhe des Shapes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.Centre(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Zentriert ein Shape an einem Punkt, geht auch mit vergrösserten (gezoomten) Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <param name="x">
+            X-Koordinate des Shape-Mittelpunktes.
+            </param>
+            <param name="y">
+            Y-Koordinate des Shape-Mittelpunktes.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.Width(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die tatsächliche sichtbare Breite eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Sichtbare Breite des Shapes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.Height(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die tatsächliche sichtbare Höhe eines Shapes.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes.
+            </param>
+            <returns>
+            Sichtbare Höhe des Shapes.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.SetImage(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt ein Bild für ein Button oder Image-Shape fest oder tauscht es aus.
+            </summary>
+            <param name="shapeName">
+            Name des Shapes oder des Buttons.
+            </param>
+            <param name="imageName">
+            Einzufügendes Bild.
+            Entweder Name des Bildes der von ImageList.LoadImage zurückgegeben wurde oder Dateiname oder URL.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.AddAnimatedGif(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein animiertes GIF-Shape (AnimatedGif).  
+            Nicht zu viele davon einsetzen, sonst wird der Computer sehr schnell sehr langsam.
+            </summary>
+            <param name="imageName">
+            Die zu ladende animierte GIF-Datei, Dateiname oder URL.
+            </param>
+            <param name="repeat">
+            Animation endlos wiederholen, "True" für ja, "False" für nein.
+            </param>
+            <returns>
+            Name des animierten GIF-Shapes (AnimatedGif).
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.AddAnimatedImage(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt eine Animation aus Bilder die aus mehreren Einzelbildern der Animation bestehen.  
+            Nicht zu viele davon einsetzen, sonst wird der Computer sehr schnell sehr langsam.
+            </summary>
+            <param name="imageName">
+            Die zu ladende Bild-Datei, Dateiname oder URL.
+            </param>
+            <param name="repeat">
+            Animation endlos wiederholen, "True" für ja, "False" für nein.
+            </param>
+            <param name="countX">
+            Anzahl der Einzelbilder in X-Richtung (horizontal).
+            </param>
+            <param name="countY">
+            Anzahl der Einzelbilder in Y-Richtung (vertikal).
+            </param>
+            <returns>
+            Name des animierten Shapes (AnimatedShape).
+            </returns>
+        </member>
+        <member name="M:LitDev.LDShapes.AnimationSet(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt das derzeitig zu zeigende Bild aus einer Animationsreihe fest.
+            </summary>
+            <param name="shapeName">
+            Name des animierten Shapes.
+            </param>
+            <param name="image">
+            Das zu zeigende Einzelbild (das Erste hat die Nummer 1).
+            </param>
+        </member>
+        <member name="M:LitDev.LDShapes.AnimationCount(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Anzahl der Einzelbilder einer Animation.
+            </summary>
+            <param name="shapeName">
+            Name des animierten Shapes.
+            </param>
+            <returns>Gesamtzahl der Einzelbilder der Animation.</returns>
+        </member>
+        <member name="M:LitDev.LDShapes.AnimationPause(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Pausiert eine Animation.
+            Pausierte Animationen können trotzdem durch AnimationSet() bestimmte Einzelbilder zeigen.
+            </summary>
+            <param name="shapeName">
+            Name des animierten Shapes.
+            </param>
+        </member>
+        <member name="M:LitDev.LDShapes.AnimationResume(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Setzt eine pausierte Animation wieder fort.
+            </summary>
+            <param name="shapeName">
+            Name des animierten Shapes.
+            </param>
+        </member>
+        <member name="M:LitDev.LDShapes.GetAllShapesAt(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt eine Liste aller Shapes die sich an einer bestimmten Position befinden und gibt diese in Form eines Arrays zurück.
+            Das könnte z.B. die Positiond des Mauszeigers sein.
+            </summary>
+            <param name="x">X-Koordinate</param>
+            <param name="y">Y-Koordinate</param>
+            <returns>
+            Ein Array mit den Namen aller Shapes an dieser Position oder "False" falls dort keines ist.
+            Die zurückgegebenen Namen sind geordnet nach Z-Index, zuerst die im Vordergrund, zum Schluss die im Hintergrund befindlichen.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDShapes.AnimationInterval">
+            <summary>
+            Der Intervall in dem die animierten Shapes weitergesetzt werden in ms (Voreinstellung 100).
+            Ein Wert von Null stoppt alle laufenden Animationen, um z.B. AnimationSet() zu erlauben ein ausgewähltes Einzelbild einzusetzen.
+            Dies ist ein interner Zeitgeber der alle animierten Bilder die nicht pausiert wurden oder noch keinen vollen Zyklus durchlaufen haben (für nicht-endlos zu wiederholende Animationen).
+            </summary>
+        </member>
+        <member name="T:LitDev.LDDateTime">
+            <summary>
+            Zeit- und Datumskonvertierung.
+            
+            Das Date-Format ist "25/01/2012 22:18:52", der Zeit-Teil ist optional.
+            Der Datums-Teil für Deutschland wird so dargestellt "25.01.2012 22:18:25", für die USA wäre es so "01/25/2012 22:18:52", Hängt ab von den lokalen Bedingungen des Benutzers.
+            
+            Ein OADate ist die Anzahl der Tage (auch Teile angefanger Tage) die seit 30.Dezember 1899 vergangen sind, so lassen sich Daten einfach addieren oder subtrahieren.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDDateTime.Now">
+            <summary>
+            Das momentane Datum und Uhrzeit.
+            </summary>
+            <returns>
+            Datum und Uhrzeit.
+            
+            Format ist "25.01.2012 22:18:52" für Deutschland, der Zeit-Teil ist optional.
+            (Format für USA wäre "01/25/2012 22:18:52").
+            </returns>
+            
+        </member>
+        <member name="M:LitDev.LDDateTime.NowOADate">
+            <summary>
+            Momentanes OADate.
+            </summary>
+            <returns>
+            Anzahl der seit 30.Dezember 1899 vergangenen (und auch angebrochenen) Tage.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.Add(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet ein Datum aus einem gegebenen Datum und einem gegebenen Zeitraum in Tagen.
+            </summary>
+            <param name="date">ein bestimmtes Datum.</param>
+            <param name="offset">ein Zeitraum in Tagen.</param>
+            <returns>
+            Ein Datum, resultierend aus vorgegebenem Datum und dem vorgegebenen Zeitraum in Tagen.
+            
+            Werden z.B dem 30.November 2011 50 Tage hinzuaddiert, erhält man den 19.Januar 2012.
+            Format ist "25.01.2012 22:18:52" für Deutschland, der Zeit-Teil ist optional.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.Subtract(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet die Zahl der Tage zwischen zwei Daten.
+            </summary>
+            <param name="date1">Erstes Datum.</param>
+            <param name="date2">Zweites Datum.</param>
+            <returns>
+            Anzahl vergangener und angebrochener Tage (Datum1-Datum2).
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.ToOADate(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert ein Datum (gewöhnliche Schreibweise) in OADate.
+            </summary>
+            <param name="date">
+            Das zu konvertierende Datum.
+            
+            Das Format für Deutschland ist "25.01.2012 22:18:52", der Zeit-Teil ist optional.
+            Der Datums-Teil hängt von den lokalen Gegebenheiten ab, in den USA wäre es z.B. so "01/25/2012 22:18:52".
+            </param>
+            <returns>
+            Anzahl der vergangenen und auch angebrochenen Tage seit 30.Dezember 1899 (OADate).
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.FromOADate(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert ein OADate in ein 'gewöhnliches' Datum.
+            </summary>
+            <param name="OAdate">
+            Das zu konvertierende OADate.
+            
+            Anzahl der seit 30.Dezember 1899 vergangenen Tage (OADate).
+            </param>
+            <returns>
+            Das Datum in gewöhnlicher Schreibweise.
+            
+            Das Format für Deutschland ist "25.01.2012 22:18:52", der Zeit-Teil ist optional.
+            Der Datums-Teil hängt von den lokalen Gegebenheiten ab, in den USA wäre es z.B. so "01/25/2012 22:18:52".
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.OADate(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet das OADate (vergangene und angebrochene Tage seit 30.Dezember 1899) aus einzelnen Datums- und Zeitangaben.
+            </summary>
+            <param name="year">
+            Das Jahr.
+            </param>
+            <param name="month">
+            Der Monat.
+            </param>
+            <param name="day">
+            Der Tag.
+            </param>
+            <param name="hour">
+            Die Stunde.
+            </param>
+            <param name="minute">
+            Die Minute.
+            </param>
+            <param name="second">
+            Die Sekunde.
+            </param>
+            <returns>
+            Anzahl der vergangenen und auch angebrochenen Tage seit 30.Dezember 1899 (OADate).
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetYear(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt das Jahr aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899.
+            </param>
+            <returns>
+            Das Jahr.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetMonth(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Monat aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+            </param>
+            <returns>
+            Den Monat.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetDay(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Tag aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+           </param>
+            <returns>
+            Den Tag.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetHour(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Stunde aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+           </param>
+            <returns>
+            Die Stunde.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetMinute(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Minute aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+           </param>
+            <returns>
+            Die Minute.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetSecond(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Sekunde aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+           </param>
+            <returns>
+            Die Sekunde.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetDayName(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Wochentag aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+           </param>
+            <returns>
+            Den Wochentag (z.B. Mittwoch).
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDateTime.GetMonthName(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Monatsnamen aus einem OADate (vergangene und angebrochene Tage seit 30.Dezember 1899).
+            </summary>
+            <param name="OAdate">
+            Das OADate.
+            
+            vergangene und angebrochene Tage seit 30.Dezember 1899 (OADate).
+           </param>
+            <returns>
+            Den Monatsnamen (z.B. Januar).
+            </returns>
+        </member>
+        <member name="T:LitDev.LDWindows">
+            <summary>
+            Erstellt zusätzliche GraphicsWindows.
+            
+            Alle Variables werden von den Fenstern gemeinsam benutzt (global scope).
+            GraphicsWindow-Ereignisse müssen für jedes Fenster einzeln behandelt werden, jedoch kann die Sub des Ereignisses von allen Fenstern gemeinsam verwendet werden.
+            Alle anderen Ereignisse können einfach behandelt werden, wie sonst auch.
+            Alle Befehle oder Methoden gehen an das momentan aktive Fenster, festgelegt durch CurrentID().
+            Das Original-GraphicsWindow hat die ID 0.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDWindows.Create">
+            <summary>
+            Erstellt ein neues GraphicsWindow.
+            </summary>
+            <returns>Die ID des erstellten Fensters.</returns>
+        </member>
+        <member name="P:LitDev.LDWindows.CurrentID">
+            <summary>
+            Ermittelt die ID des momentan aktiven Fensters oder legt dieses fest.
+            </summary>
+        </member>
+        <member name="E:LitDev.LDWindows.Activated">
+            <summary>
+            Ereignis das eintritt wenn ein Fenster aktiviert wird.
+            Dieses Ereignis sollte mit Vorsicht verwendet werden, für die meisten Fälle nicht empfohlen.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWindows.LastActivated">
+            <summary>
+            zuletzt aktiviertes Fenster.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWindows.Active">
+            <summary>
+            Ermittelt die ID des derzeit aktiven (im Vordergrund befindlichen) Fensters oder legt diese fest.
+            -1 bedeuted 'kein aktives Fenster'.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDColours">
+            <summary>
+            Stellt Standard SmallBasic-Farben und andere Farben-betreffende Methoden bereit.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDColours.HSLtoRGB(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Konvertiert einen Farbton-, Sättigung- und Leuchtkraft-Wert (Hue, Saturation, Lightness = HSL) in übliche Rot-, Grün- und Blauwerte (RGB) wie sie in SmallBasic verwendet werden.
+            </summary>
+            <param name="H">Farbnuance - Hue (0 bis 360).</param>
+            <param name="S">Sättigung - Saturation (0.0 bis 1.0).</param>
+            <param name="L">Leuchtkraft - Lightness (0.0 bis 1.0).</param>
+            <returns>Eine RGB-Farbe</returns>
+        </member>
+        <member name="M:LitDev.LDColours.SetOpacity(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ändert die Deckkraft einer Farbe.
+            </summary>
+            <param name="colour">zu verändernde Farbe.</param>
+            <param name="opacity">Deckkraft (0 bis 255).</param>
+            <returns>geänderte Farbe.</returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetRed(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Rotanteil einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Rotanteil ermittelt werden soll.</param>
+            <returns>Rotanteil (0 bis 255).</returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetGreen(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Grünanteil einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Grünanteil ermittelt werden soll.</param>
+            <returns>Grünanteil (0 bis 255).</returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetBlue(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Blauanteil einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Blauanteil ermittelt werden soll.</param>
+            <returns>Blauanteil (0 bis 255).</returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetOpacity(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Deckkraft einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Deckkraft ermittelt werden soll.</param>
+            <returns>Deckkraft der Farbe (0 bis 255).</returns>
+        </member>
+        <member name="M:LitDev.LDColours.ColourDialog">
+            <summary>
+            Erlaubt dem Benutzer die Auswahl einer Farbe mit Hilfe eines Dialogfensters.
+            </summary>
+            <returns>
+            ausgewählte Farbe des Benutzers.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetHue(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Farbnuance (Hue) einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Farbton (Hue) ermittelt werden soll.</param>
+            <returns>Farbnuance (Hue, 0 bis 255).</returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetSaturation(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Sättigung (Saturation) einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Sättigung (Saturation) ermittelt werden soll.</param>
+            <returns>Sättigung (Saturation, 0.0 bis 1.0).</returns>
+        </member>
+        <member name="M:LitDev.LDColours.GetLightness(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Leuchtkraft (Lightness) einer Farbe.
+            </summary>
+            <param name="colour">Farbe deren Leuchtkraft (Lightness) ermittelt werden soll.</param>
+            <returns>Leuchtkraft (Lightness, 0.0 bis 1.0).</returns>
+        </member>
+        <member name="T:LitDev.LDEvents">
+            <summary>
+            Zusätzliche Ereignisse.
+            </summary>
+        </member>
+        <member name="E:LitDev.LDEvents.MouseWheel">
+            <summary>
+            Dieses Ereignis tritt ein wenn das Mausrad gedreht wird.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDEvents.LastMouseWheelDelta">
+            <summary>
+            Ermittelt die letzte Drehrichtung des Mausrades.
+            </summary>
+            <returns>
+            Drehrichtung des Mausrades.
+            </returns>
+        </member>
+        <member name="E:LitDev.LDEvents.MouseDoubleClick">
+            <summary>
+            Dieses Ereignis tritt ein wenn ein Doppelklick gemacht wird.
+            </summary>
+        </member>
+        <member name="E:LitDev.LDEvents.Resized">
+            <summary>
+            Dieses Ereignis tritt ein wenn die Grösse des GraphicsWindow geändert wird.
+            </summary>
+        </member>
+        <member name="E:LitDev.LDEvents.FileChange">
+            <summary>
+            Dieses Ereignis tritt ein wenn eine Datei erstellt, verändert oder gelöscht wird.
+            
+            Das Verzeichnis und Dateifilter müssen festgelegt werden bevor dieses Ereignis registriert werden kann.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDEvents.FilePath">
+            <summary>
+            Das Stammverzeichnis welches von LDEvents.FileChange() überwacht werden soll (Voreinstellung ist "C:").
+            </summary>
+        </member>
+        <member name="P:LitDev.LDEvents.FileFilter">
+            <summary>
+            Dateifilter für von LDEvents.FileChange() zu überwachende Dateitypen (Voreinstellung ist "*.*").
+            </summary>
+        </member>
+        <member name="P:LitDev.LDEvents.LastFileChanged">
+            <summary>
+            Die letzte geänderte Datei.
+            </summary>
+            <returns>
+            Verzeichnis- und Dateiname.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDEvents.LastFileChangeType">
+            <summary>
+            Die Art der letzten Änderung.
+            </summary>
+            <returns>
+            die Art der Änderung ("Created" für erstellt, "Changed" für geändert oder "Deleted" falls die Datei gelöscht wurde).
+            </returns>
+        </member>
+        <member name="T:LitDev.LDWebCam">
+            <summary>
+            Ermöglicht Zugriff auf eine angeschlossene Webcam.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDWebCam.Start(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ruft ein Webcam-Anzeige-Objekt ('Bildschirm') auf. Dieses besteht aus einem SmallBasic-Shape.
+            
+            Dieses Objekt lässt sich mit allen Standard-Shapes-Methoden bewegen, zoomen, rotieren usw.
+            
+            Maximale Auflösung für gewöhnlich 640*480 Pixel, kleiner = schneller.
+            </summary>
+            <param name="width">Breite des Webcam-Bildschirms.</param>
+            <param name="height">Höhe des Webcam-Bildschirms.</param>
+            <returns>Name des Webcam-Bildschirm-Objekts.</returns>
+        </member>
+        <member name="M:LitDev.LDWebCam.End">
+            <summary>
+            Beendet die Darstellung auf dem Webcam-Bildschirm. Muss aufgerufen werden bevor das Shape entfernt wird.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDWebCam.Snapshot">
+            <summary>
+            Macht ein Bildschirmfoto vom Webcam-Bildschirm und speichert es als *.jpg mit Hilfe eines 'Speichern als'- Dialoges.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDWebCam.SnapshotToFile(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Macht ein Bildschirmfoto und speichert es.
+            </summary>
+            <param name="fileName">Dateiname unter dem das Bild als *.jpg-Datei gespeichert werden soll.</param>
+        </member>
+        <member name="M:LitDev.LDWebCam.SnapshotToImageList">
+            <summary>
+            Macht ein Bildschirmfoto und legt dieses im Speicher (ImageList) ab.
+            </summary>
+            <returns>Name des Bildes in ImageList.</returns>
+        </member>
+        <member name="M:LitDev.LDWebCam.Pause">
+            <summary>
+            Pausiert das Updaten der Webcam.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDWebCam.Resume">
+            <summary>
+            Setzt zuvor pausiertes Updaten der Webcam fort.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWebCam.Interval">
+            <summary>
+            Minimale Verzögerung der Webcam zwischen den Updates in ms (Voreinstellung 20).
+            In der Realität werden diese Zeiten aber selten erreicht, insbesondere wenn Spezialeffekte verwendet werden.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWebCam.Effect">
+            <summary>
+            Der derzeitige Effekt.
+            Kann durch setzen der Effekt-Eigenschaften festgelegt werden.
+            (z.B. LDWebCam.Effect = LDWebCam.EffectGray).
+            </summary>
+        </member>
+        <member name="T:LitDev.LDDialogs">
+            <summary>
+            Diese Klasse bietet verschiedene Methoden zu Steuerungselementen, Dialogen und Popup-Fenstern.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDDialogs.Wait(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein 'Bitte warten!'-Popup-Fenster mit einer Nachricht.
+            </summary>
+            <param name="text">Nachricht die in dem Popup zu lesen sein soll.</param>
+            <param name="colour">Randfarbe des Popup-Fensters, "" für lokale Windows-Einstellung.</param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDialogs.EndWait">
+            <summary>
+            Schliesst das 'Bitte warten!'-Popup-Fenster.
+            </summary>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDialogs.ToolTip(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt ein Tooltip (Kontext-Hilfe) für gewöhnliche Shapes und Steuerungselemente fest.
+            </summary>
+            <param name="shape">Nema des Shapes oder des Steuerungselements.</param>
+            <param name="tip">Der Text der im Tooltip angezeigt werden soll.</param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDDialogs.Calendar(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ein Popup-Kalender welcher dem Benutzer erlaubt ein Datum zu wählen - Doppelklick oder Enter-Taste zum Auswählen eines Datums.
+            </summary>
+            <param name="start">das zunächst angezeigte Datum, verwende "" für aktuell(heute).</param>
+            <returns>vom Benutzer ausgewähltes Datum.</returns>
+        </member>
+        <member name="M:LitDev.LDDialogs.OpenFile(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Datei-Öffnen-Dialog.
+            </summary>
+            <param name="Extension">
+            Dateityp bzw. Dateiendung z.B.".sb".
+            </param>
+            <returns>vom Benutzer gewählter Datei- und Verzeichnisname.</returns>
+        </member>
+        <member name="M:LitDev.LDDialogs.SaveFile(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Datei-Speichern-Dialog.
+            </summary>
+            <param name="Extension">
+            Dateityp bzw. Dateiendung z.B.".sb".
+            </param>
+            <returns>vom Benutzer gewählter Datei- und Verzeichnisname.</returns>
+        </member>
+        <member name="T:LitDev.LDDebug">
+            <summary>
+            Hilfsmittel zur Fehlersuche (Debugging).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDDebug.Start">
+            <summary>
+            Startet eine Debug-Sitzung. Für gewöhnlich steht dieser Aufruf in der ersten Zeile des Programmes.
+            Normalerweise setzt man Break-Points (Stellen an denen der Programmablauf unterbrochen werden soll) manuell ein bevor das Programm gestartet wird (LDDebug.Break) es gibt aber auch eine Funktion welche diese Break-Points automatisch einsetzt (LDDebug.Instrument).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDDebug.Instrument(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt eine SmallBasic-Datei mit automatisch eingesetzten Break-Points (_debug.sb).
+            
+            Danach diese Datei in SmallBasic laden und starten um auf Fehlersuche zu gehen.  
+            Wenn ein Problem auftritt, kann es im Original leicht korrigiert werden, danach erneut LDDebug.Instrument() aufrufen um die korrigierte Datei weiter zu untersuchen.
+            </summary>
+            <param name="fileName">die SmallBasic-Datei (*.sb) an der LDDebug.Instrument() angewendet werden soll.</param>
+        </member>
+        <member name="M:LitDev.LDDebug.Break(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Setzt hier einen Break-Point ein, an dem der Programmablauf angehalten wird und Variablen überprüft werden können.
+            </summary>
+            <param name="label">Eine Bezeichnung um diesen Break-Point identifizieren zu können.
+            Dies sollte eine von Anführungstrichen eingeschlossene Zeichenkette sein z.b. "meineMarkierung01".
+            Jede Bezeichnung sollte einmalig sein, d.h. jeder Break-Point bekommt einen eigenen Namen.</param>
+        </member>
+        <member name="T:LitDev.LDFile">
+            <summary>
+            Diese Klasse stell verschiedene Hilfsmittel für Dateizugriffe bereit.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDFile.ReadToArray(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            List den Inhalt einer Textdatei als Array ein, wobei jedes Array-Element eine Textzeile enthält.
+            
+            Leere Zeilen werden durch Array-Elemente die ein Leerzeichen enthalten dargestellt.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname der Textdatei.
+            </param>
+            <returns>
+            Ein Array mit einem Element für jede Textzeile in der Datei.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.Length(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Anzahl der Textzeilen einer Textdatei.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname der Textdatei.
+            </param>
+            <returns>
+            Anzahl der Textzeilen in dieser Datei bei Erfolg, -1 bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.CreationTime(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Erstellungszeitpunkt einer Datei oder eines Verzeichnisses.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname.
+            </param>
+            <returns>
+            Erstellungszeitpunkt der Datei oder des Verzeichnisses bei Erfolg, "" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.AccessTime(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den letzten Zugriffszeitpunkt einer Datei oder eines Verzeichnisses.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname.
+            </param>
+            <returns>
+            Zeitpunkt des letzten Zugriffs auf die Datei oder das Verzeichnis bei Erfolg, "" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.ModifiedTime(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt den Zeitpunkt der letzten Änderung an einer Datei oder einem Verzeichnis.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname.
+            </param>
+            <returns>
+            Zeitpunkt der letzten Änderung an Datei oder Verzeichnis bei Erfolg, "" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.MusicPlayTime(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Länge (Abspieldauer) einer Musikdatei.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname z.B. "C:\Users\Public\Music\song.mp3".
+            </param>
+            <returns>
+            Die Länge des Stückes in Sekunden oder 0 bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.ReadCSV(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Liest eine CSV-Datei (Comma Separated Values) als Array ein.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname der CSV-Datei.
+            </param>
+            <returns>
+            Ein zweidimensionaler Array der die Daten der eingelesenen CSV-Datei enthält.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.ReadCSVTransposed(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Liest eine CSV-Datei (Comma Separated Values) als Array ein und tauscht Werte für Reihen und Spalten.
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname der CSV-Datei.
+            </param>
+            <returns>
+            Ein zweidimensionaler Array der die seitenvertauschten Daten der eingelesenen CSV-Datei enthält.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDFile.WriteCSV(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Speichert einen zweidimensionalen Array als CSV-Datei (Comma Separated Values).
+            </summary>
+            <param name="fileName">
+            Datei- und Verzeichnisname der CSV-Datei.
+            </param>
+            <param name="array">
+            Der in die Datei zu speichernde Array.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDFile.CSVplaceholder">
+            <summary>
+            Zeichen welches anstelle leerer Werte verwendet werden soll wenn CSV-Dateien eingelesen werden.
+            Ein SmallBasic-Array kann keine leeren Werte ("") speichern.
+            
+            Voreinstellung ist eine leere Zeichenkette (""), d.h. der Array wird keine leeren Elemente aus der CSV-Datei enthalten.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDSpeech">
+            <summary>
+            Die LDSpeech-Klasse erlaubt es Texte zu sprechen oder gesprochenen Worte zu erkennen.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDSpeech.Voices">
+            <summary>
+            Ermittelt wieviele Stimmen verfügbar sind.
+            </summary>
+            <returns>
+            Ein Array mit einer Liste der zur Verfügung stehenden Stimmen.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDSpeech.Speak(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Spricht beliebigen Text.
+            </summary>
+            <param name="text">
+            zu sprechender Text.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDSpeech.Vocabulary(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt ein Vokabular an Wörtern und Sätzen welche die Spracherkennung verwenden wird.
+            Falls dieses nicht erstellt wurde, wird eine sehr grosse Sprachbibliothek verwendet und die daraus resultierenden Ergebnisse sind wirklich nicht gut (unbrauchbar!).
+            Deutlich gesprochene Sätze werden besser erkannt als einzelne Worte.
+            </summary>
+            <param name="dictionary">
+            Ein Array von Wörtern oder Sätzen die erkannt werden sollen.
+            Wenn dieses leer ist wird das voreingestellte (englische) Sprachvokabular benutzt.
+            </param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="P:LitDev.LDSpeech.Speed">
+            <summary>
+            Geschwindigkeit der Sprachausgabe (-10 bis 10).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDSpeech.Volume">
+            <summary>
+            Lautstärke der Sprachausgabe (0 bis 100).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDSpeech.Voice">
+            <summary>
+            die aktuell verwendete Stimme.
+            </summary>
+        </member>
+        <member name="E:LitDev.LDSpeech.Listen">
+            <summary>
+            Ereignis das eintritt wenn Sprache gesprochen und vom Computer erkannt wird.
+            Ein gutes Mikrofon, einige Übung und ein prägnantes Vokabular werden für brauchbare Ergebnisse benötigt.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDSpeech.LastSpoken">
+            <summary>
+            Text der zuletzt gesprochen und vom Computer erkannt wurde.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDSpeech.LastSpokenConfidence">
+            <summary>
+            Das Vertrauen in die Korrektheit der zuletzt erkannten Spracheingabe (0 bis 1).
+            </summary>
+        </member>
+        <member name="T:LitDev.LDWeather">
+            <summary>
+            Ermittelt lokales Wetter (USA).
+            </summary>
+        </member>
+        <member name="M:LitDev.LDWeather.Forecast(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt Wetter-Bedingungen für einen bestimmten Ort.
+            Dies muss aufgerufen werden bevor detaillierte Wetterberichte abgerufen werden können.
+            </summary>
+            <param name="location">Ein Ort, kann eine Stadt oder Postleitzahl (US-zip-Code) sein.</param>
+            <returns>Ein Array der eine Vorhersage für die nächsten 4 Tage enthält oder "FAILED" bei Misserfolg.</returns>
+        </member>
+        <member name="P:LitDev.LDWeather.Location">
+            <summary>
+            Aktueller Ort.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWeather.Conditions">
+            <summary>
+            Aktuelles Wetter.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWeather.TempC">
+            <summary>
+            Aktuelle Temperatur (°Celcius).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWeather.TempF">
+            <summary>
+            Aktuelle Temperatur (°Farenheight).
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWeather.Humidity">
+            <summary>
+            Aktuelle Luftfeuchte in Prozent
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWeather.WindDirection">
+            <summary>
+            Aktuelle Windrichtung.
+            </summary>
+        </member>
+        <member name="P:LitDev.LDWeather.WindSpeed">
+            <summary>
+            Aktuelle Windgeschwindigkeit in Meilen pro Stunde.
+            </summary>
+        </member>
+        <member name="T:LitDev.LDMatrix">
+            <summary>
+            Eine 2-Dimensionale Matrix-Struktur die z.B. verwendet werden kann um lineare Gleichungen zu lösen.
+            Bei einem Fehler wird das zurückgegebene Ergebnis "FAILED" sein.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDMatrix.Create(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt eine Matrix.
+            Reihen und Spalten der Matrix können mit rows = 1 or cols = 1 entsprechend festgelegt werden.
+            </summary>
+            <param name="rows">Anzahl der Reihen.</param>
+            <param name="cols">Anzahl der Spalten.</param>
+            <returns>eine Matrix oder "FAILED".</returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.Delete(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            löscht eine existierende Matrix (nicht generell empfohlen, aber kann Speicherplatz freigeben wenn viele Matrizen verwendet werden.
+            </summary>
+            <param name="matrix">
+            Name der Matrix.
+            </param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.SetValue(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Setzt einen Wert in die Matrix ein.
+            </summary>
+            <param name="matrix">
+            Name der Matrix.
+            </param>
+            <param name="row">
+            Reihe, in die der Wert eingesetzt werden soll (die erste Reihe wäre 1).
+            </param>
+            <param name="col">
+            Spalte, in die der Wert eingesetzt werden soll (die erste Spalte wäre 1).
+            </param>
+            <param name="value">
+            Einzusetzender Wert.
+            </param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.GetValue(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt einen Wert aus der Matrix.
+            </summary>
+            <param name="matrix">
+            Name der Matrix.
+            </param>
+            <param name="row">
+            Die Reihe aus der der Wert ausgelesen werden soll (die erste Reihe wäre 1).
+            </param>
+            <param name="col">
+            Die Spalte  aus der der Wert ausgelesen werden soll (die erste Spalte wäre 1).
+            </param>
+            <returns>
+            gewünschter Wert bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.CopyNew(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert eine Matrix in eine neue Matrix.
+            </summary>
+            <param name="matrix">
+            Zu kopierende Matrix.
+            </param>
+            <returns>
+            eine Kopie der Matrix bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.Copy(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert eine Matrix in eine existierende Matrix.
+            Die Dimensionen beider Matrizen müssen gleich sein.
+            </summary>
+            <param name="matrix1">
+            zu kopierende Matrix.
+            </param>
+            <param name="matrix2">
+            Matrix in die kopiert werden soll.
+            </param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.Add(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Addiert zwei Matrizen, Anzahl der Reihen und Spalten müssen für alle gleich sein.
+            Alternativ, wenn die zweite Matrix eine skalare Zahl ist wird sie zu jedem Element der ersten Matrix hinzuaddiert.
+            </summary>
+            <param name="matrix1">erste Matrix.</param>
+            <param name="matrix2">zweite matrix (oder skalare Zahl).</param>
+            <param name="result">Matrix die das Ergebnis erhält.</param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.Multiply(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Multipliziert zwei Matrizen, Anzahl der Reihen und Spalten müssen für die beiden ersten Matrizen gleich sein.
+            Die Anzahl der Reihen und Spalten der Matrix die das Ergebnis enthalten soll müssen der Anzahl der Reihen der ersten und die Anzahl der Spalten der zweiten Matrix entsprechen.
+            Alternativ, wenn die zweite Matrix eine skalare Zahl ist, wird sie mit jedem Element der ersten Matrix multipliziert. Dazu müssen die Dimensionen der ersten und der Ergebnis-Matrix gleich sein.
+            </summary>
+            <param name="matrix1">erste Matrix.</param>
+            <param name="matrix2">zweite matrix (oder skalare Zahl).</param>
+            <param name="result">Matrix die das Ergebnis erhält.</param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.Inverse(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Berechnet eine Inverse Matrix (Gaußsches Eliminationsverfahren).
+            Anzahl der Reihen und Spalten müssen für beide Matrizen gleich und quadratisch sein.
+            Eine Singuläre Matrix gibt den Wert "SINGULAR" zurück und die Inverse Matrix wird fehlerhaft sein.
+            </summary>
+            <param name="matrix">Matrix deren Inversum berechnet werden soll (wird nicht verändert).</param>
+            <param name="inverse">die Inverse Matrix.</param>
+            <returns>
+            "FAILED", "SINGULAR" oder "" bei Erfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.Transpose(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Errechnet eine Transponierte Matrix.
+            Anzahl der Reihen und Spalten der beiden Matrizen müssen kreuzweise gleich sein, d.h. die erste Matrix muss soviele Spalten haben wie die zweite Matrix Reihen hat und umgekehrt.
+            </summary>
+            <param name="matrix">die zu transponierende Matrix.</param>
+            <param name="transpose">die resultierende transponierte Matrix.</param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.View(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Zeigt eine Matrix zu Debugging-Zwecken an.
+            </summary>
+            <param name="matrix">anzuzeigende Matrix.</param>
+            <param name="modal">Das Anzeigen der Matrix wird den Programmablauf anhalten bis die Anzeige geschlossen wurde ("True" oder "False").</param>
+            <returns>
+            Nichts.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDMatrix.CopyToSBArray(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert eine LDMatrix in einen SmallBasic-Array.
+            
+            Die Gegenoperation (SmallBasic-Array zu LDMatrix) ist nicht möglich da SmallBasic-Arrays nicht zwangsläufig mit aufeinanderfolgenden Ganzzahlen indiziert werden.
+            </summary>
+            <param name="matrix">
+            Name der Matrix.
+            </param>
+            <returns>
+            Ein SmallBasic-Array bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="T:LitDev.LDArray">
+            <summary>
+            Ein eindimensionaler Array welcher sehr viel schneller operiert als ein gewöhnlicher SmallBasic-Array.
+            
+            Nützlich für Arrays mit mehr als 100 bis 1000 Elementen.
+            Bei einem Fehler wird der Rückgabewert "FAILED" sein.
+            </summary>
+        </member>
+        <member name="M:LitDev.LDArray.Create(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Erstellt einen neuen Array der für Zahlen oder Zeichenketten verwendet werden kann.
+            </summary>
+            <param name="maxSize">
+            Maximale Anzahl von Elementen in diesem Array.
+            </param>
+            <returns>
+            Name des Arrays bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.Delete(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Löscht einen existierenden Array aus dem Speicher (nicht unbedingt nötig, aber kann Speicherplatz freigeben wenn viele Arrays verwendet werden).
+            </summary>
+            <param name="array">
+            Name des Arrays.
+            </param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.SetValue(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Legt einen Wert im Array fest.
+            </summary>
+            <param name="array">
+            Name des Arrays.
+            </param>
+            <param name="index">
+            Index des zu ändernden Elements im Array (das erste hat den Index 1).
+            </param>
+            <param name="value">
+            Einzusetzender Wert.
+            </param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.GetValue(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Liest einen Wert aus dem Array aus.
+            </summary>
+            <param name="array">
+            Name des Arrays.
+            </param>
+            <param name="index">
+            Index des Elements, dessen Wert gelesen werden soll (das erste hat den Index 1).
+            </param>
+            <returns>
+            ausgelesener Wert bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.CopyNew(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert einen Array in einen neuen Array.
+            </summary>
+            <param name="array">
+            Zu kopierender Array.
+            </param>
+            <returns>
+            eine Kopie des Arrays bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.Copy(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert einen Array in einen anderen Array.
+            Beide Arrays müssen gleich dimensioniert sein.
+            </summary>
+            <param name="array1">
+            der zu kopierende Array.
+            </param>
+            <param name="array2">
+            der Array in den die Daten kopiert werden sollen.
+            </param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.CopyToSBArray(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Kopiert einen Array vom Typ LDArray in einen vom Typ SmallBasic-Array.
+            
+            Die Gegenoperation (SmallBasic-Array zu LDArray) ist nicht möglich da SmallBasic-Arrays nicht zwangsläufig mit aufeinanderfolgenden Ganzzahlen indiziert werden.
+            Ebenso zu beachten ist, das SmallBasic-Arrays keine leeren Zeichenketten ("") enthalten können, daher werden diese Werte nicht mitkopiert.
+            </summary>
+            <param name="array">
+            Name des Arrays.
+            </param>
+            <returns>
+            ein SmallBasic-Array bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.Sort(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Sortiert einen LDArray.  
+            
+            Voreingestellt ist Sortierung nach Alphabet, daher kommt "10" vor "2".
+            Um nach Zahlenwert zu sortieren müssen alle Werte Zahlen sein (oder leer).
+            
+            Leere Werte werden am Ende der Sortierung zu finden sein.
+            Der angegebene Array wird durch den sortierten Array ersetzt.
+            </summary>
+            <param name="array">Zu sortierender Array.</param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+        <member name="M:LitDev.LDArray.Count(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Ermittelt die Anzahl der nicht-leeren Elemente eines Arrays.
+            </summary>
+            <param name="array">Name des Arrays.</param>
+            <returns>Anzahl der Elemente in diesem Array die Werte enthalten.</returns>
+        </member>
+        <member name="M:LitDev.LDArray.SortIndex(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Füllt ein Array mit den sortierten Indizes eines zu sortierenden Arrays.
+            
+            Voreingestellt ist Sortierung nach Alphabet, daher kommt "10" vor "2".
+            Um nach Zahlenwert zu sortieren müssen alle Werte Zahlen sein (oder leer).
+            
+            Leere Werte werden am Ende der Sortierung zu finden sein.
+            Der angegebene Array wird nicht verändert und der Indizes-beinhaltende Array muss zuvor auf die gleiche Grösse wie der zu sortierende dimensioniert werden.
+            </summary>
+            <param name="array">Der Array welcher nach dem Sortieren die Reihenfolge der Indizes beinhaltet.</param>
+            <param name="index">Ein Array welcher die Reihenfolge des sortierten Arrays enthält.</param>
+            <returns>
+            "" bei Erfolg, "FAILED" bei Misserfolg.
+            </returns>
+        </member>
+    </members>
+</doc>

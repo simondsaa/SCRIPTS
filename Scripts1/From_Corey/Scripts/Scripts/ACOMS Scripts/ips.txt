@@ -1,0 +1,110 @@
+
+Pinging 52xlwul3-470471.area52.afnoapps.usaf.mil [131.55.192.115] with 32 bytes of data:
+Reply from 131.55.192.115: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.115: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.115: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.115: bytes=32 time=1ms TTL=127
+
+Ping statistics for 131.55.192.115:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-470472.area52.afnoapps.usaf.mil [131.55.192.152] with 32 bytes of data:
+Reply from 131.55.192.152: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.152: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.152: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.152: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.152:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-470473.area52.afnoapps.usaf.mil [131.55.192.154] with 32 bytes of data:
+Reply from 131.55.192.154: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.154: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.154: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.154: bytes=32 time=1ms TTL=127
+
+Ping statistics for 131.55.192.154:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-470474.area52.afnoapps.usaf.mil [131.55.192.63] with 32 bytes of data:
+Reply from 131.55.192.63: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.63: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.63: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.63: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.63:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-470475.area52.afnoapps.usaf.mil [131.55.192.155] with 32 bytes of data:
+Reply from 131.55.192.155: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.155: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.155: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.155: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.155:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-470476.area52.afnoapps.usaf.mil [131.55.192.70] with 32 bytes of data:
+Reply from 131.55.192.70: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.70: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.70: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.70: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.70:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-470477.area52.afnoapps.usaf.mil [131.55.192.131] with 32 bytes of data:
+Reply from 131.55.192.131: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.131: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.131: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.131: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.131:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+Pinging 52xlwul3-47043S.area52.afnoapps.usaf.mil [131.55.192.134] with 32 bytes of data:
+Reply from 131.55.192.134: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.134: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.134: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.134: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.134:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 52xlwul3-47043T.area52.afnoapps.usaf.mil [131.55.192.139] with 32 bytes of data:
+Reply from 131.55.192.139: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.139: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.139: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.139: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.139:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Pinging 52xlwul3-47043W.area52.afnoapps.usaf.mil [131.55.192.103] with 32 bytes of data:
+Reply from 131.55.192.103: bytes=32 time=1ms TTL=127
+Reply from 131.55.192.103: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.103: bytes=32 time<1ms TTL=127
+Reply from 131.55.192.103: bytes=32 time<1ms TTL=127
+
+Ping statistics for 131.55.192.103:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms

@@ -1,0 +1,1 @@
+﻿Get-GPResultantSetOfPolicy -User AREA52\1256247433A -Computer 52xlwuw3-43206x -ReportType HTML -Path C:\Users\timothy.brady\Desktop\RSOP.html

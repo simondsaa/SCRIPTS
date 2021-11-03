@@ -1,0 +1,40 @@
+set @CollID = (case when IsNULL(@CollID,'')='' then 'SMS00001' else @CollID end)
+
+/*Compliance Overview*/
+SELECT
+	Total as 'Total Systems',
+	TotalFirefox as 'Total w/Firefox',
+	Firefox_Compliant as 'Mozilla Firefox (Compliant)',
+	Firefox_NonCompliant as 'Mozilla Firefox (Non-Compliant)',
+	((100*Firefox_Compliant)/(Firefox_Compliant+Firefox_NonCompliant)) as 'Firefox Compliance %'
+
+FROM(
+	SELECT DISTINCT
+		count(DISTINCT sys.Name0) as 'Total',
+		sum (case when ((ARP.DisplayName0 like 'Mozilla Firefox%')) then 1 else 0 end) as TotalFirefox,
+		sum (case when ((ARP.DisplayName0 like 'Mozilla Firefox%') and (ARP.Version0 = '53.0.2')) then 1 else 0 end) as Firefox_Compliant,
+		sum (case when ((ARP.DisplayName0 like 'Mozilla Firefox%') and (ARP.Version0 < '53.0.2')) then 1 else 0 end) as Firefox_NonCompliant
+		from v_R_System sys
+		join v_GS_ADD_REMOVE_PROGRAMS ARP on ARP.ResourceID = sys.ResourceID
+		join v_FullCollectionMembership FCM on FCM.ResourceID = sys.ResourceID
+	where CollectionID = @CollID
+) as overview
+
+select distinct 
+	sys.Name0 'Computer Name',
+	OS.Caption0 'Operating System Name',
+	OS.CSDVersion0 'Service pack',
+	sys.User_Name0,
+	ARP.DisplayName0 'ARP Display Name',
+	ARP.Version0 'ARP Version',
+	WS.LastHWScan
+from  v_R_System sys
+join v_ADD_REMOVE_PROGRAMS ARP on ARP.ResourceID = sys.ResourceID
+join v_GS_OPERATING_SYSTEM OS on OS.ResourceID = sys.ResourceID
+join v_GS_WORKSTATION_STATUS WS on WS.ResourceID = sys.ResourceID
+join v_FullCollectionMembership FCM on FCM.ResourceID = sys.ResourceID
+where 
+	(ARP.DisplayName0 like 'Mozilla Firefox%' and ARP.Version0 < '53.0.2') 
+	and 
+	CollectionID = @CollID  
+order by ARP.Version0

@@ -1,0 +1,2 @@
+﻿$Comp = "XLWUL-461R1Z"
+$Task = schtasks.exe /CREATE /TN "Delete Old Profiles" /S $Comp /SC WEEKLY /D SAT /ST 23:59 /RL HIGHEST /RU SYSTEM /TR "powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Hidden -noprofile -File '\\xlwu-fs-05pv\Tyndall_PUBLIC\NCC Admin\Delete Old Profiles.ps1'" /F

@@ -1,0 +1,1 @@
+Robocopy.exe "\\xlwu-fs-003\afcesashared$\historian" "k:\HISTORIAN" *.* /SEC /MIR /r:1 /w:1 /NP /LOG:C:\Robocopy\HISTORIAN.txt

@@ -1,0 +1,1 @@
+start-process "C:\Windows\System32\Bubbles.scr"

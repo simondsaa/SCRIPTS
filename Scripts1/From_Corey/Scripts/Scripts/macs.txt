@@ -1,0 +1,50 @@
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+Disabled            Disconnected                                              
+38-EA-A7-5D-B5-99   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+N/A                 Hardware not present                                      
+38-EA-A7-5D-6A-93   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+C8-CB-B8-B1-F8-27   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+Disabled            Disconnected                                              
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+38-EA-A7-5D-6A-AD   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+N/A                 Hardware not present                                      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+38-EA-A7-5D-56-9F   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+N/A                 Hardware not present                                      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+38-EA-A7-5D-6A-7D   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+N/A                 Hardware not present                                      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+38-EA-A7-5D-7A-3A   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+N/A                 Hardware not present                                      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+38-EA-A7-5D-D4-05   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+N/A                 Hardware not present                                      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+N/A                 Hardware not present                                      
+38-EA-A7-5D-F4-7C   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+38-EA-A7-5D-15-16   \Device\Tcpip_{C734E75E-F450-44E2-AF63-EFE98CA44598}      
+N/A                 Hardware not present                                      

@@ -1,0 +1,2 @@
+﻿Import-Module C:\Users\timothy.brady\Documents\WindowsPowerShell\Modules\PSTerminalServices\PSTerminalServices.psm1
+Import-Module C:\Users\timothy.brady\Documents\WindowsPowerShell\Modules\PSTerminalServices\PSTerminalServices.psd1

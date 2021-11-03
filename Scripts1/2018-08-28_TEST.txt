@@ -1,0 +1,124 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Tuesday, August 28, 2018 12:25:31 PM
+   Source : C:\Users\1252862141.adm\Desktop\Scripts1\TEST\
+     Dest : \\xlwuw-aocsd1\C$\users\1383807847N\Desktop\Check This Out\Made You Look\
+
+    Files : *.*
+	    
+  Options : *.* /TEE /S /DCOPY:DA /COPY:DAT /NP /R:3 /W:1 
+
+------------------------------------------------------------------------------
+
+	  New Dir          1	C:\Users\1252862141.adm\Desktop\Scripts1\TEST\
+	    New File  		       8	pops.txt
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         1         0         0         0         0
+   Files :         1         1         0         0         0         0
+   Bytes :         8         8         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :                 533 Bytes/sec.
+   Speed :               0.030 MegaBytes/min.
+   Ended : Tuesday, August 28, 2018 12:25:31 PM
+
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Tuesday, August 28, 2018 12:32:43 PM
+2018/08/28 12:32:43 ERROR 67 (0x00000043) Getting File System Type of Destination \\xlwuw-aocsd1\users\1383807847.adm\Desktop\
+The network name cannot be found.
+
+   Source : C:\Users\1252862141.adm\Desktop\Scripts1\TEST\
+     Dest - \\xlwuw-aocsd1\users\1383807847.adm\Desktop\
+
+    Files : *.*
+	    
+  Options : *.* /TEE /S /DCOPY:DA /COPY:DAT /NP /R:3 /W:1 
+
+------------------------------------------------------------------------------
+
+2018/08/28 12:32:43 ERROR 67 (0x00000043) Creating Destination Directory \\xlwuw-aocsd1\users\1383807847.adm\Desktop\
+The network name cannot be found.
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Tuesday, August 28, 2018 12:32:53 PM
+   Source : C:\Users\1252862141.adm\Desktop\Scripts1\TEST\
+     Dest : \\xlwuw-aocsd1\C$\users\1383807847.adm\Desktop\
+
+    Files : *.*
+	    
+  Options : *.* /TEE /S /DCOPY:DA /COPY:DAT /NP /R:3 /W:1 
+
+------------------------------------------------------------------------------
+
+	                   1	C:\Users\1252862141.adm\Desktop\Scripts1\TEST\
+	*EXTRA Dir        -1	\\xlwuw-aocsd1\C$\users\1383807847.adm\Desktop\Enable Audio\
+	*EXTRA Dir        -1	\\xlwuw-aocsd1\C$\users\1383807847.adm\Desktop\New Scripts\
+	*EXTRA Dir        -1	\\xlwuw-aocsd1\C$\users\1383807847.adm\Desktop\Scripts\
+	*EXTRA Dir        -1	\\xlwuw-aocsd1\C$\users\1383807847.adm\Desktop\stuff\
+	  *EXTRA File 		     887	141 CAT Cell PC Names.txt
+	  *EXTRA File 		     385	A3 Conf Rm PC Names.txt
+	  *EXTRA File 		   17175	AFNORTH.vbs
+	  *EXTRA File 		    1740	Applications.lnk
+	  *EXTRA File 		     281	box.txt
+	  *EXTRA File 		    1563	c$ (xlwuw-s1m0nd5).lnk
+	  *EXTRA File 		     969	compmgmt.msc.lnk
+	  *EXTRA File 		   57863	Copy of Couling NIPR Whitelist 2016-305-001 Waiver Template.xlsx
+	  *EXTRA File 		     282	desktop.ini
+	  *EXTRA File 		      97	Enable  Local Admin.bat
+	  *EXTRA File 		     227	File_Transfer_Multi-File_Multi-PCs.ps1
+	  *EXTRA File 		     932	Flip Off Pop-up.ps1
+	  *EXTRA File 		  297788	haha.csv
+	  *EXTRA File 		    1935	Local Admin Multi.lnk
+	  *EXTRA File 		    1923	Local Admin PW Change.lnk
+	  *EXTRA File 		   78114	mine.dwhl
+	  *EXTRA File 		    1293	mmc - Shortcut.lnk
+	  *EXTRA File 		      41	msg.txt
+	  *EXTRA File 		     666	New Text Document (2).ps1
+	  *EXTRA File 		     124	New Text Document.ps1
+	  *EXTRA File 		   23274	P DAWG.ps1
+	  *EXTRA File 		   11262	PC Names.xlsx
+	  *EXTRA File 		     482	PFPS MACs.txt
+	  *EXTRA File 		    8670	PostIt Notes.txt
+	  *EXTRA File 		    1761	powershell.exe.lnk
+	  *EXTRA File 		    2286	print server.rdp
+	  *EXTRA File 		    1933	PS Remote.lnk
+	  *EXTRA File 		  524288	PUTTY.EXE
+	  *EXTRA File 		   61271	rerefeas.txt
+	  *EXTRA File 		     460	script.ps1
+	  *EXTRA File 		    2337	SOFTWARE.lnk
+	  *EXTRA File 		    1717	Temp.lnk
+	  *EXTRA File 		    6543	test (revised with 141).csv
+	  *EXTRA File 		    3500	test.csv
+	  *EXTRA File 		    1931	unlock.lnk
+	  *EXTRA File 		     354	Voice.ps1
+	  *EXTRA File 		  94.4 m	WindowsTH-RSAT_WS_1709-x64.msu
+	  *EXTRA File 		      83	WMIC.txt
+	    New File  		       8	pops.txt
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         4
+   Files :         1         1         0         0         0        38
+   Bytes :         8         8         0         0         0   95.55 m
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :                 258 Bytes/sec.
+   Speed :               0.014 MegaBytes/min.
+   Ended : Tuesday, August 28, 2018 12:32:53 PM
+

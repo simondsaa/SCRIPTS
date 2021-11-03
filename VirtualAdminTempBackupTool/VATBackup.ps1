@@ -1,0 +1,1 @@
+Robocopy "C:\Temp" "\\xlwu-fs-01pv\Tyndall_ANG\1AF\601AOC\101AOG\101ACOMS\ACOMS_SCO\ACOMS_SCO_ST\ACOMS SCOO_Business Systems\01_AGR\Simonds, Aaron\AdminTemp" /MIR /XA:SH /XD /XJD /R:5 /W:15 /MT:32 /V /NP /LOG:"C:\Temp\Logs\VirtualAdminTempBackupTool\VATBackup.log"

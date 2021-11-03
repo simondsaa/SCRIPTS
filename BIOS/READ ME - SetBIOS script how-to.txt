@@ -1,0 +1,56 @@
+These instructions are for the "SetBIOS - TSgt Simonds' Edit.ps1"
+	- The main changes made were removing the option for credentials since we use Alt Tokens.
+
+HOW-TO:
+
+Copy the BIOS folder located here:  "\\xlwu-fs-05pv\tyndall_public\Applications\Powershell\BIOS" to your "C:\Temp" folder.
+
+Copy "Microsoft.PackageManagement.NuGetProvider.dll" in "C:\Temp\BIOS\nuget\2.8.5.208" to your lcoal "C:\Program Files\PackageManagement\ProviderAssemblies"
+
+Install Modules: 
+	Reference:  https://docs.microsoft.com/en-us/powershell/scripting/gallery/how-to/working-with-packages/manual-download?view=powershell-7
+	Unblock the Internet-downloaded NuGet package (.nupkg) file; for example, using Unblock-File -Path C:\Downloads\module.nupkg cmdlet.
+	Change the .nupkg extension to .zip; extract the contents of the NuGet package to a local folder (I recommend in C:\Temp\BIOS".
+	Delete the NuGet-specific elements (.nuspec) from the folder.
+	Rename the folder to just the module name. For example, "azurerm.storage.5.0.4-preview" becomes "azurerm.storage".
+	Copy the folder to one of the folders in the $env:PSModulePath value.
+		-In powershell, type:   $env:PSModulePath
+		-This command will display where modules are stored.
+		-Copy the folder to one of the listed directories listed.
+
+Configure "biosetting.csv" to your liking.
+	- Before you can do this, you will need to know the proper vernacular, e.g., "SecureBoot" vs "Configure Legacy Support and Secure Boot"
+	- To obtain these settings, you will need to run the listed commands found on this webpage:
+		-http://www.systanddeploy.com/2019/03/list-and-change-bios-settings-with.html
+	- I recommendusi multiple variable settings due to varying BIOS versions, regardless if all PCs in your list are the same model. For an 	  	  	  example of this, look here:  C:\Temp\PowerShell\BIOS\biosetting_HP_UEFI_SecureBoot.csv.
+		- You will get an error per PC, but you will also successfully change the settings you desire to modify. This ensures you don't have to run 		  	  the script multiple times to affect changes on all PCs.
+	- Here are some examples for HP machines:  
+		On Local PC (or in PSSession):		
+			Get-WmiObject -Namespace root/hp/instrumentedBIOS -Class hp_biosEnumeration | select Name, currentvalue, possiblevalues | out-file 				C:\Temp\HPBIOSSettings.csv
+		On Remote PC:  
+			Get-WmiObject -ComputerName XLWUW-PCNAME -Namespace root/hp/instrumentedBIOS -Class hp_biosEnumeration | select Name, currentvalue, 				possiblevalues | out-file C:\Temp\HPBIOSSettings.csv
+		On Multiple Remote PCs: 
+			$Path = "C:\Temp\PCList.txt"
+			$Computers = gc $Path
+			ForEach($Computer in $Computers){
+				Get-WmiObject -ComputerName XLWUW-PCNAME -Namespace root/hp/instrumentedBIOS -Class hp_biosEnumeration | select Name, 						currentvalue, possiblevalues | out-file C:\Temp\HPBIOSSettings.csv}
+
+Run "SetBIOS - TSgt Simonds' Edit.ps1" in PowerShell ISE.
+	-The "SetBIOS" function is now stored and can be ran in Powershell.
+	-If you are running this on your local machine, simply type in "SetBIOS" in PowerShell and press enter.
+		-You will be prompted to input the directory of the biosetting.csv.
+	-If you are running this on remote PC(s), follow the switches below. There are also example commands below for both single and multi PC(s).
+		The following are the switches for the "Set-BIOS" function:
+     			-CSV "CSVPath": Path of the CSV file containing BIOS settings to change 
+     			-Computer "ComputerName": Remote computer name on which you want to change settings 
+			 ***OR***
+     			-Multiple: Use it to change settings on multiple remote computers (Do not use -Computer with it) 
+     			-Manufacturer "HP, Dell, Lenovo": To use with the -Multiple parameter. Type the manufacturer of the list of remote computers: Dell, 			         HP or Lenovo. 
+     			-List "ComputersList.txt": To use with the -Multiple parameter. Path of the TXT file that contains the list of remote computer name 
+     			-Password: If a BIOS password is set, you will have to type the password once it's asked 
+			-Or run the Clear BIOS Password function in the PS Multi Script (Option 8). Definitely the quickest option for modifying multiple 				 PCs.
+				Example for multiple HP PCs:
+					Set-BIOS -multiple -Manufacturer HP -List "C:\ComputersList.txt" -CSV "C:\BIOS_Settings.csv" 
+				Example for one HP PC:
+					Set-BIOS -computer xlwul-PCNAME -Manufacturer HP -CSV "C:\BIOS_Settings.csv"
+

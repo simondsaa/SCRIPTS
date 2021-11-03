@@ -1,0 +1,1 @@
+net use S: "\\tyncesaapspd02\afcesashared$\SHARE" /PERSISTENT:YES

@@ -1,0 +1,1 @@
+msiexec.exe /I \\52xlwu-cm-004v\smspkgd$\INE002EB\GoogleChrome_34.0.1847.116.msi /quiet /norestart

@@ -1,0 +1,1 @@
+cls; While ( $True ) { $PSise.Options.Zoom = 100 + 10 * [math]::sin( (Get-Date).TimeOfDay.TotalSeconds ); Sleep -Milliseconds 40 }

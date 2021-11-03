@@ -1,0 +1,1 @@
+net use R: "\\tyncesaapspd02\afcesashared$\REFERENCE" /PERSISTENT:YES

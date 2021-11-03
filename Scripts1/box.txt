@@ -1,0 +1,7 @@
+
+ #This creates a label for the TextBox1
+ $objLabel1 = New-Object System.Windows.Forms.Label
+ $objLabel1.Location = New-Object System.Drawing.Size(10,20) 
+ $objLabel1.Size = New-Object System.Drawing.Size(280,20) 
+ $objLabel1.Text = "Name:"
+ $objForm.Controls.Add($objLabel1)

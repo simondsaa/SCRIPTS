@@ -1,0 +1,3 @@
+﻿Get-credential -Credential {$SCSerials = certutil -scinfo -silent | Where{$_ -match 'Serial Number: (\S+)'} | ForEach {$Matches[1]}
+$SelectedThumb = Get-ChildItem Cert:\CurrentUser\my | Where{$_.SerialNumber -in $SCSerials} | Select Subject,Issuer,NotBefore,NotAfter,Thumbprint | Out-GridView -Title 'Select a smartcard certificate.' -OutputMode Single |% Thumbprint
+$UserCert = Get-Item Cert:\CurrentUser\My\$SelectedThumb}
